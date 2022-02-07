@@ -1,0 +1,31 @@
+#heading, h1, h2, body {
+	font-size: 60px;
+	text-align: center;
+}
+#heading {
+	font-size: 40px;
+}
+
+
+a {color: hotpink;
+}
+
+h1 {
+	text-align: center;
+}
+
+body {
+	font-size:  40px;
+	text-align: center;
+  	font-family: "Kosugi Maru", sans-serif;
+  }
+
+h2 {
+	font-size: 40px;
+	text-align: center;
+}
+iframe {
+	border: 0;
+}
+
+
