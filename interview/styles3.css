@@ -1,0 +1,37 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+	font-size:  12px;
+	line-height: 14px;
+	font-family: monospace;
+	padding-left: .3em;
+}
+a {
+color: #0000FF;
+text-decoration: underline;
+} 
+
+body {background-color: whitesmoke;}
+
+.liner {
+	color: purple;
+	text-align: center;
+}
+.liner2 {
+	text-align: left;
+}
+.speaker {
+	color: brown;
+}
+.transcription {
+	color: black;
+}
+.reference {
+	color: #0000FF;
+}
+
+img {
+  padding: 2px;
+  object-fit: contain;
+}
