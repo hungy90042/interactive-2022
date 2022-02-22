@@ -1,0 +1,1381 @@
+Delivered-To: claire.hungerford@gmail.com
+Received: by 2002:a92:c981:0:0:0:0:0 with SMTP id y1csp3174924iln;
+        Mon, 24 Jan 2022 22:10:12 -0800 (PST)
+X-Google-Smtp-Source: ABdhPJw48rlEVNkfefQecm/ycWyJbmqWA0t4O3tDqtY0C+0QgjrQ+eckP8jKowoakAdLfKHf89Ht
+X-Received: by 2002:a63:d59:: with SMTP id 25mr2229301pgn.404.1643091011991;
+        Mon, 24 Jan 2022 22:10:11 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1643091011; cv=none;
+        d=google.com; s=arc-20160816;
+        b=frSyNLxorYr+zECq2WrzVxR8lcdo58JgemC81WlswdY9NLeEx1427zkEpp4FkcgV0o
+         cF4hMXiarthQ+RfmFXiJGY3bf1km9rPUAEGItGYoChoJQvEPwEECZ4P3uy0fh/EQ393u
+         dO198f5waYnjmomeh+zVr71C5cj7Z2VJWLEsFg8LGJ+QwXW81GLZ82d+Y2XhNwogVbP3
+         UkOK2IxKs8M91K3VPePVtlpEiU6HYcFDQ1hf/Nmy2LUAnLHBMQP8BMT5+ErX1jWfmtlM
+         cF5Dt/o4U8ZC1MC7sSjzZH1o3V0mh+7IrnkWUa9hYzk3cz34Q7cRHHo3Mo6hyVN+NGxi
+         eGLg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:references:date:list-owner:list-post:message-id
+         :list-archive:reply-to:list-id:in-reply-to:list-unsubscribe-post
+         :sender:list-url:to:from:subject:mime-version:dkim-signature
+         :dkim-signature;
+        bh=Kk15jApdiyZn0bkb6+PaxmBKAXBGiw1yeofrSLdFORU=;
+        b=Oh3dYxZcK7mF17Jkv/p8Fj23WkPr9WIMvlgTSNuCgXzc9r4uxCBpiIlM1rZhwS/QO7
+         szUK0yzuZVeOigANopx0XIe2/9UvRaNgApVLqc4USA+CK3R+h9DITz4m/EpKBZPVfL2D
+         W5BloKXhe/D0stTUiah3ACrqiyBa7vRUkmJqBFxX6LrU0GBpnIFIwnQvSvait+M42s6A
+         giMyJbKnTMeJuvKx+NmhTT4V+gtGsnuNBdtUbg7CuBAKEcCHEp+hsH1U5dXIIk+zyv5u
+         vcbzB8vvCzN33eTmHEv7Zcx81d6ykgo9+EQ3HQzP6RmtQCG0XFrgp/5BEGTKUvUGb9Oo
+         XRfg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mg1.substack.com header.s=mailo header.b=TnQXjlZi;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=jTOFQzyH;
+       spf=pass (google.com: domain of bounce+ade864.072c7b-claire.hungerford=gmail.com@mg1.substack.com designates 161.38.200.89 as permitted sender) smtp.mailfrom="bounce+ade864.072c7b-claire.hungerford=gmail.com@mg1.substack.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=substack.com
+Return-Path: <bounce+ade864.072c7b-claire.hungerford=gmail.com@mg1.substack.com>
+Received: from mg-200-89.substack.com (mg-200-89.substack.com. [161.38.200.89])
+        by mx.google.com with UTF8SMTPS id e11si5877778plc.377.2022.01.24.22.10.11
+        for <claire.hungerford@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 24 Jan 2022 22:10:11 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce+ade864.072c7b-claire.hungerford=gmail.com@mg1.substack.com designates 161.38.200.89 as permitted sender) client-ip=161.38.200.89;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mg1.substack.com header.s=mailo header.b=TnQXjlZi;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=jTOFQzyH;
+       spf=pass (google.com: domain of bounce+ade864.072c7b-claire.hungerford=gmail.com@mg1.substack.com designates 161.38.200.89 as permitted sender) smtp.mailfrom="bounce+ade864.072c7b-claire.hungerford=gmail.com@mg1.substack.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=substack.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg1.substack.com; q=dns/txt;
+ s=mailo; t=1643091011; h=List-Unsubscribe: References: Date:
+ List-Owner: List-Post: Message-Id: List-Archive: Reply-To: List-Id:
+ In-Reply-To: Sender: To: From: Subject: Content-Type: Mime-Version:
+ X-Feedback-Id; bh=Kk15jApdiyZn0bkb6+PaxmBKAXBGiw1yeofrSLdFORU=; b=TnQXjlZiJ3Oz3Zu27OHz33PRhv+oYw4va6LbIyMK/xRSpa6PL/pq78pX+S84LdsceaY/vwwI
+ 2ASI4V6/k3ckwJ5XP+LuDczO06hk8Lt3HwA9ioUa8ywStwdzrhiwQQ4fQiiHQNN+XMWmW1vv
+ J92bdPL4BPHfOTGeC/zvdTje6Bk=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org; q=dns/txt; s=mg;
+ t=1643091011; h=List-Unsubscribe: References: Date: List-Owner:
+ List-Post: Message-Id: List-Archive: Reply-To: List-Id: In-Reply-To:
+ Sender: To: From: Subject: Content-Type: Mime-Version: X-Feedback-Id;
+ bh=Kk15jApdiyZn0bkb6+PaxmBKAXBGiw1yeofrSLdFORU=; b=jTOFQzyHz3oRO7ufcvT03g2iANKaqZQwzD43mkRiO85uCtIEuuB+nX+vRoacDVDASZCb9j5K
+ p5s1Y66xbInbqPDPVQaqHcw4xoCRZHsLB9uLmU5eAVt7SROC5pHIHcJwue6EvK6cNkRFVEe9
+ ffzyeUNwjVBdtiGahUhLGYjZM4M=
+X-Feedback-Id: 5a78a772b6d1e3000132bb09:mailgun
+X-Mailgun-Sending-Ip: 161.38.200.89
+X-Mailgun-Sid: WyI5ZDJkOCIsICJjbGFpcmUuaHVuZ2VyZm9yZEBnbWFpbC5jb20iLCAiMDcyYzdiIl0=
+Received: from <unknown> (<unknown> []) by
+ api-n12.prod.us-east-1.postgun.com with HTTP id 61ef9442e46e09ccb6147e4e;
+ Tue, 25 Jan 2022 06:10:10 GMT
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary="975106bc549b2cf7ee361180334f357670e85bf769247c905e81864e6bfa"
+Subject: 002
+From: Goodzones Weekly <calebflowers@substack.com>
+To: claire.hungerford@gmail.com
+X-Mailgun-Tag: post
+List-Url: <https://calebflowers.substack.com/>
+Sender: Goodzones Weekly <calebflowers@substack.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+In-Reply-To: <post-47656459@substack.com>
+List-Id: <calebflowers.substack.com>
+Reply-To: Goodzones Weekly
+ <reply+sdfyj&ee8vc&&aa44d407cdcaf72fde8e7cb595568e950583ac65a18ba9c55af3b2b3458d93dd@mg1.substack.com>
+List-Archive: <https://calebflowers.substack.com/archive>
+Message-Id: <20220125061006.2.f9d4bff14e3d27d0.w6yuvzlt@mg1.substack.com>
+List-Post: <https://calebflowers.substack.com/p/002>
+List-Owner: <mailto:calebflowers@substack.com>
+Date: Tue, 25 Jan 2022 06:10:06 +0000
+References: <post-47656459@substack.com>
+List-Unsubscribe: <https://calebflowers.substack.com/action/disable_email/disable?token=eyJ1c2VyX2lkIjoyNDE3OTMwNCwicG9zdF9pZCI6NDc2NTY0NTksImlhdCI6MTY0MzA5MTAxMCwiaXNzIjoicHViLTI0NTIyNCIsInN1YiI6ImRpc2FibGVfZW1haWwifQ.Vey4qvxPcG9-uv9MuwXa08w5i3TrlVQIF5GVaHwY8dY>
+X-Mailgun-Variables: {"category":"post", "email_generated_at":"1643091010482",
+ "is_freemail":"", "post_audience":"only_paid", "post_id":"47656459",
+ "post_type":"newsletter", "pub_community_enabled":"true",
+ "publication_id":"245224", "subdomain":"calebflowers", "user_id":"24179304"}
+
+--975106bc549b2cf7ee361180334f357670e85bf769247c905e81864e6bfa
+Content-Type: text/plain; charset="ascii"
+Content-Transfer-Encoding: quoted-printable
+
+View this post on the web at https://email.mg1.substack.com/c/eJxVUMtuxCAM_=
+JrlGBlCoDlw6KW_gXg4WVQWIh5dpV9ftrm0kh-HsT2ecabhnsupjlwbeRXdzgNVwmeN2BoW0isW=
+HbxinMp1Bk68AsmctCRUvRXEhwlRkaPbGJxpIadremGMk7taHKBfuBWbkFbCYkF64JyvfnZWenm=
+Rmu4DJocqp3jqwwRPorq3dtTb_H5jHyOciWi3mJ9Y6lS7rc24z8nlx8COkQCMBMWAMaBsAUEBxM=
+SmbfXcbhvlOHs2qKenOPvXd2w3Do-d_rtEinLRhILTvacdy5aLH2P7S-EvPkTq0R89hXZqTMZG9=
+KqVjqRdFv66oXdMWIa1XpumqOAzrBQo8Dd2yR0GcSkWwZeVjAd8HltJ_VX4A0YGihM
+
+
+
+Unsubscribe https://email.mg1.substack.com/c/eJxVUk2PmzAQ_TXhVmQbA-HgQ5Q0Wa=
+pCuxVik70gYw-JG_NRY5Ylv75Ocmkly_Z4nueN3hvBLZx7s7ChH6133yq7DMA6mEcN1oLxphFMp=
+SQjFMdJgKgnGYqJiGtPjVVjAFquNPOGqdZKcKv67okOCaHehQkR1VggHK2BCkTWPI6koFIkMg45=
+EPwk5ZNU0AlgfaeXauBKeppdrB3GVbBZkb1bgmuoG93PYEZ_nOrRcnH1Rd-6HBd3XneRauS1hur=
+R1CrY2_4K3SrYwfINC1IuR6Kv6e9-yXdfgx9FNufbWYlDcpP7ZHjfplG-EyQvTigvrmPa6ot0b5=
+mLs9smzIrNZ-bw_JjfXA0lXkr1vUgdNl3ybTqmXY5PKo3S9tcgyF7Vh7J5f8MX_jar5tUvYaF_P=
+j5_Orov00eSTfORo_UcqqAwunxN9-Gh5C_zaS1PnmIEEYIwCVGEEYp84jeJpHXTYAqBJLFE_hwt=
+08dN2xVF7Rn_p4hnmNBcGfAvU3cG0_RGOtj5Lsoj78yq3NlOnbJLBd1dM8msmcCzz1F4CFidoQP=
+jRkRW3DIc0QAlGGFE1-RpmzOaxlEY0TDxXAOyd7869q9TfwHhqM7J
+--975106bc549b2cf7ee361180334f357670e85bf769247c905e81864e6bfa
+Content-Type: text/html; charset="ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><title>002</title><style>
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .typography .markup table.image-wrapper img,
+  .typography.editor .markup table.image-wrapper img,
+  .typography .markup table.kindle-wrapper img,
+  .typography.editor .markup table.kindle-wrapper img {
+    max-width: 550px;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .typography .markup iframe.spotify-wrap,
+  .typography.editor .markup iframe.spotify-wrap,
+  .typography .markup a.spotify-wrap,
+  .typography.editor .markup a.spotify-wrap {
+    width: auto !important;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .typography .markup div.youtube-wrap div.youtube-screen,
+  .typography.editor .markup div.youtube-wrap div.youtube-screen,
+  .typography .markup div.vimeo-wrap div.youtube-screen,
+  .typography.editor .markup div.vimeo-wrap div.youtube-screen {
+    display: none !important;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .typography .markup div.embedded-publication-wrap .embedded-publication.s=
+how-subscribe,
+  .typography.editor .markup div.embedded-publication-wrap .embedded-public=
+ation.show-subscribe {
+    padding: 28px 24px;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .typography .markup div.subscription-widget-wrap .subscription-widget.sho=
+w-subscribe,
+  .typography.editor .markup div.subscription-widget-wrap .subscription-wid=
+get.show-subscribe,
+  .typography .markup div.captioned-button-wrap .subscription-widget.show-s=
+ubscribe,
+  .typography.editor .markup div.captioned-button-wrap .subscription-widget=
+=2Eshow-subscribe {
+    padding: 28px 24px;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .typography .markup div.subscription-widget-wrap .subscription-widget.sho=
+w-subscribe .subscription-widget-subscribe .button,
+  .typography.editor .markup div.subscription-widget-wrap .subscription-wid=
+get.show-subscribe .subscription-widget-subscribe .button,
+  .typography .markup div.captioned-button-wrap .subscription-widget.show-s=
+ubscribe .subscription-widget-subscribe .button,
+  .typography.editor .markup div.captioned-button-wrap .subscription-widget=
+=2Eshow-subscribe .subscription-widget-subscribe .button {
+    padding: 10px 12px;
+    min-width: 110px;
+  }
+}
+
+
+@media print {
+  .typography .markup .button-wrapper,
+  .typography.editor .markup .button-wrapper {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .typography .markup .apple-podcast-container,
+  .typography.editor .markup .apple-podcast-container {
+    width: unset;
+  }
+}
+
+
+@media screen and (min-width: 481px) {
+  .share-button-container {
+    height: 38px;
+  }
+}
+
+
+@media screen and (min-width: 481px) {
+  .share-button-container a.comment {
+    height: 38px;
+    line-height: 38px;
+    padding-right: 10px;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .share-button-container .separator {
+    display: block;
+    margin: 0;
+    height: 8px;
+    border-left: none;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .share-button-container a.share.first img {
+    padding-left: 0;
+  }
+}
+
+
+@media screen and (min-width: 481px) {
+  .share-button-container a.mobile {
+    display: none !important;
+  }
+}
+
+
+@media screen and (max-width: 1000px) {
+  .congrats-box {
+    flex-direction: column;
+  }
+  .congrats-box .congrats-box-right {
+    margin-left: 38px;
+    margin-top: 16px;
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  .congrats-box {
+    display: none;
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .post {
+    padding: 15px 0 24px;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .post .post-header .meta-author-wrap.alternative-meta .meta-right-column =
+table.post-meta {
+    margin-top: 6px;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .post-contributor-footer .post-contributor-bio-table {
+    display: block;
+  }
+  .post-contributor-footer .post-contributor-bio-table-row {
+    display: flex;
+    flex-direction: row;
+  }
+  .post-contributor-footer .post-contributor-bio-userhead-cell,
+  .post-contributor-footer .post-contributor-bio-body-cell {
+    display: block;
+  }
+  .post-contributor-footer .post-contributor-bio-body-cell {
+    flex-grow: 1;
+  }
+  .post-contributor-footer .post-contributor-bio-body-table {
+    display: block;
+  }
+  .post-contributor-footer .post-contributor-bio-body-table-row {
+    display: block;
+  }
+  .post-contributor-footer .post-contributor-bio-copy-cell,
+  .post-contributor-footer .post-contributor-bio-controls-cell {
+    display: block;
+  }
+  .post-contributor-footer .post-contributor-bio-copy-cell {
+    margin: 0 0 16px 0;
+  }
+  .post-contributor-footer .post-contributor-bio-controls-cell {
+    width: auto;
+  }
+  .post-contributor-footer .post-contributor-bio-controls {
+    margin: auto;
+  }
+  .post-contributor-footer .post-contributor-bio-controls .button.primary {
+    width: 100%;
+  }
+  .post-contributor-footer .post-contributor-bio-text {
+    font-size: 14px;
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .post-silhouette {
+    padding: 15px 0;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .post-silhouette .post-silhouette-title {
+    margin-top: 10.44225025px;
+    height: 120px;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .post-silhouette .post-silhouette-meta {
+    width: 75%;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .post-silhouette .post-silhouette-meta.with-byline-image {
+    margin: 20px 0;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .use-theme-bg table.post-meta.alternative-meta tr td.post-meta-item,
+  table.post-meta.alternative-meta tr td.post-meta-item {
+    padding-right: 16px;
+  }
+}
+
+
+@media screen and (max-width: 370px) {
+  .use-theme-bg table.post-meta.alternative-meta tr td.post-meta-item,
+  table.post-meta.alternative-meta tr td.post-meta-item {
+    font-size: 14px;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .use-theme-bg table.post-meta.alternative-meta tr td.post-meta-item.guest=
+-author-publication,
+  table.post-meta.alternative-meta tr td.post-meta-item.guest-author-public=
+ation {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 370px) {
+  table.post-meta tr td.post-meta-item .post-meta-button {
+    height: 36px !important;
+  }
+  table.post-meta tr td.post-meta-item .post-meta-button .meta-button-label=
+ {
+    display: none;
+  }
+  table.post-meta tr td.post-meta-item .post-meta-button > svg {
+    margin-right: 0;
+  }
+}
+
+
+@media screen and (max-width: 370px) {
+  table.post-meta tr td.post-meta-item {
+    font-size: 12px;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .post-preview > .post-preview-image {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .post-preview-silhouette .post-preview-silhouette-image {
+    display: none;
+  }
+}
+
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  body .markup table.image-wrapper img,
+  body .markup table.kindle-wrapper img {
+    max-width: 550px;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  body .markup iframe.spotify-wrap,
+  body .markup a.spotify-wrap {
+    width: auto !important;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  body .markup div.youtube-wrap div.youtube-screen,
+  body .markup div.vimeo-wrap div.youtube-screen {
+    display: none !important;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  body .markup div.embedded-publication-wrap .embedded-publication.show-sub=
+scribe {
+    padding: 28px 24px;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  body .markup div.subscription-widget-wrap .subscription-widget.show-subsc=
+ribe,
+  body .markup div.captioned-button-wrap .subscription-widget.show-subscrib=
+e {
+    padding: 28px 24px;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  body .markup div.subscription-widget-wrap .subscription-widget.show-subsc=
+ribe .subscription-widget-subscribe .button,
+  body .markup div.captioned-button-wrap .subscription-widget.show-subscrib=
+e .subscription-widget-subscribe .button {
+    padding: 10px 12px;
+    min-width: 110px;
+  }
+}
+
+
+@media print {
+  body .markup .button-wrapper {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  body .markup .apple-podcast-container {
+    width: unset;
+  }
+}
+
+
+@media screen and (min-width: 500px) {
+  body .header a.logo {
+    width: 42px;
+    height: 42px;
+    border-radius: 6px;
+  }
+}
+
+
+@media screen and (max-width: 420px) {
+  body .subscription-receipt table:first-of-type .subscription-amount .subs=
+cription-discount {
+    width: 72px !important;
+  }
+}
+
+
+@media screen and (min-width: 481px) {
+  body .share-button-container {
+    height: auto;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  body .share-button-container .separator {
+    display: block !important;
+    margin: 0 !important;
+    height: 8px !important;
+    border-left: none !important;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  body .footer {
+    outline: 8px solid #f8f8f8 !important;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .digest .item .post-meta-item.audience {
+    display: none;
+  }
+}
+
+
+@media screen and (min-width: 500px) {
+  .digest-publication .logo img {
+    width: 42px;
+    height: 42px;
+    border-radius: 6px;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .comments-page .container .comment-list .collapsed-reply {
+    margin-left: 18px;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .comment > .comment-list {
+    padding-left: 25px;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .finish-magic-login-modal .modal-content .container {
+    padding: 24px 0;
+  }
+}
+
+
+@media screen and (min-width: 541px) {
+  .user-profile-modal {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .subscribe-widget form.form .sideBySideWrap button.rightButton {
+    padding: 10px 12px;
+    min-width: 110px;
+  }
+}
+
+
+@media screen and (min-width: 541px) {
+  .pub-icon:hover .logo-hover,
+  .feed-item-icon:hover .logo-hover {
+    display: block;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .file-embed-wrapper {
+    padding: 0;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .file-embed-wrapper-editor {
+    padding: 0;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .file-embed-wrapper-editor:active {
+    padding: 0;
+  }
+}
+
+
+@media only screen and (max-width: 630px) {
+  .file-embed-button.wide,
+  .file-embed-error-button.wide {
+    display: none;
+  }
+}
+
+
+@media only screen and (min-width: 630px) {
+  .file-embed-button.narrow,
+  .file-embed-error-button.narrow {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .audio-player-wrapper .audio-player .audio-player-progress {
+    border-left-width: 16px;
+    border-right-width: 16px;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .audio-player-wrapper .audio-player .audio-player-progress .audio-player-=
+progress-bar .audio-player-progress-bar-popup {
+    top: -54px;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .audio-player-wrapper-fancy .audio-player .audio-player-progress {
+    border-left-width: 16px;
+    border-right-width: 16px;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .audio-player-wrapper-fancy .audio-player .audio-player-progress .audio-p=
+layer-progress-bar .audio-player-progress-bar-popup {
+    top: -54px;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .video-player-wrapper .video-player-button {
+    padding-top: 22.8%;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
+  .video-player-wrapper .video-player-button.no-text {
+    padding-top: 18%;
+  }
+}
+
+
+@media not all and (min-resolution: 0.001dpcm) {
+}
+</style></head><body class=3D"email-body" style=3D"font-kerning: auto;"><im=
+g src=3D"https://mailgun.substack.com/api/v1/email/open?token=3DeyJtIjoiPDI=
+wMjIwMTI1MDYxMDA2LjIuZjlkNGJmZjE0ZTNkMjdkMC53Nnl1dnpsdEBtZzEuc3Vic3RhY2suY2=
+9tPiIsInUiOjI0MTc5MzA0LCJyIjoiY2xhaXJlLmh1bmdlcmZvcmRAZ21haWwuY29tIiwiZCI6I=
+m1nMS5zdWJzdGFjay5jb20iLCJwIjo0NzY1NjQ1OSwicyI6MjQ1MjI0LCJjIjoicG9zdCIsImYi=
+OmZhbHNlLCJpYXQiOjE2NDMwOTEwMTAsImlzcyI6InB1Yi0wIiwic3ViIjoiZW8ifQ.J6_EEQOo=
+PIykMIL90TG8Ej0jHa6-zW3VLw3WS_cLtuU" alt=3D"" width=3D"1" height=3D"1" bord=
+er=3D"0" style=3D"height:1px !important;width:1px !important;border-width:0=
+ !important;margin-top:0 !important;margin-bottom:0 !important;margin-right=
+:0 !important;margin-left:0 !important;padding-top:0 !important;padding-bot=
+tom:0 !important;padding-right:0 !important;padding-left:0 !important;"/><d=
+iv style=3D"display:none;font-size:1px;color:#333333;line-height:1px;max-he=
+ight:0px;max-width:0px;opacity:0;overflow:hidden;" class=3D"preview">Finish=
+ed Unfinished and Brutalist Log Cabins&#160;&#8204;&#160;&#8204;&#160;&#820=
+4;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#=
+8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160=
+;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#=
+160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204=
+;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8=
+204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;=
+&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#1=
+60;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;=
+&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#82=
+04;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&=
+#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#16=
+0;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&=
+#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#820=
+4;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#=
+8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160=
+;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#=
+160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204=
+;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8=
+204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;=
+&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#1=
+60;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;=
+&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#82=
+04;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&=
+#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#16=
+0;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&=
+#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#820=
+4;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#=
+8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160=
+;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#=
+160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204=
+;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8=
+204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;=
+&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#1=
+60;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;=
+&#160;&#8204;</div><table role=3D"presentation" width=3D"100%" border=3D"0"=
+ cellspacing=3D"0" cellpadding=3D"0" class=3D"email-body-container"><tr><td=
+></td><td width=3D"550" class=3D"content"></td><td></td></tr><tr><td></td><=
+td align=3D"left" width=3D"550" class=3D"content"><div style=3D"font-size: =
+16px; line-height: 26px; margin: 0 auto; max-width: 550px; overflow-wrap: b=
+reak-word; width: 100%;"><div class=3D"post typography" style=3D"font-size:=
+ 16px; line-height: 26px; padding: 9px 0;"><div class=3D"post-header" style=
+=3D"font-size: 16px; line-height: 26px;"><h1 class=3D"post-title short publ=
+ished" style=3D"-moz-osx-font-smoothing: antialiased; -webkit-font-smoothin=
+g: antialiased; color: #1a1a1a; font-family: 'SF Compact Display', -apple-s=
+ystem, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif=
+, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 40px=
+; font-weight: bold; line-height: 130%; margin: 0.378em 0 0 0;"><a href=3D"=
+https://email.mg1.substack.com/c/eJxVkl2TmyAUhn9NvHQQEfWCizQ2rdvETnYyaZIbBw=
+ENDaIF3Kz--rKbm3aGj4H35Zwz54FRJ7rBzGQcrAs-ltrNoyBaPKwSzgkTTFaYWnICUZTmMUABJ=
+yCFLG0CaevWCNFTqUgwTo2SjDo56Kc7gRAFNwJg1uQiS7OsxbCNUYxxmsEmpWnCBY74MymduBSa=
+CTJoNdcjlTxQ5ObcaFfxegW3fjCqRNOq4SGMDe3UWEfZPWRD77XRTwDgKt664S70Ki7E_BIxeJr=
+PUN3L38NcFV_jn8f9o9o8JPuWL3ybj9dNiauCwep4AdXxbste3bi_2_vzflkn--P6fe_99FwtPo=
+Zk309ydyy9t5yrTWlLXUUXWeJSf3lj8cGx_nS7xK9jA5FsD-Gu_9On78ny-qsvmgRdz8WmPBduW=
+hp7lTt7-XEw4_hCS95dAkkggBBEMAE4AgCHMGxzjpq2jZCIOUw5CB94nt4W5VYI9F30XwsCQ5ii=
+0ojwNulOmHYw3Nu6DzSfuqdT-72ftHRzLTRtlODEmUkE7sn-E2PdCS2M_xO8po5EGMUgj0AEUAa=
+fnDxZlOIEoyQPfAF88K80-RfNX0jgx9c" style=3D"color: #1a1a1a; text-decoration:=
+ none;">002</a></h1><h3 class=3D"subtitle" style=3D"-moz-osx-font-smoothing=
+: antialiased; -webkit-font-smoothing: antialiased; color: #767676; font-fa=
+mily: 'SF Compact Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', =
+Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'=
+, 'Segoe UI Symbol'; font-size: 20px; font-weight: normal; line-height: 1.1=
+6em; margin: 4px 0 0; margin-top: 8px;">Finished Unfinished and Brutalist L=
+og Cabins</h3><table class=3D"meta-author-wrap with-photo" style=3D"margin:=
+ 1em 0;"><tr class=3D"meta-author-wrap-row"><td><div class=3D"user-head " s=
+tyle=3D"font-size: 16px; line-height: 26px;"><a href=3D"https://email.mg1.s=
+ubstack.com/c/eJxNUEmOwyAQfE24jYUxBvvAYS7zDcTSOCgELJaxnNcPiS8jtXpRb1VlVIUt5=
+VPsqVT0drKeO4gIRwlQK2TUCmTprSB05OuEKbICc2K4Rr5IlwGeygeB9qaDN6r6FK_pmRCK7oIT=
+MGpZLEyGaq3YvDCGV8Ut55NajLueqmY9RAMixXDKXXmLgrjXupfb9H0jP91K06Uq8xhMevZyz8n=
+5AD0jE15HRuev7XUAPMKJvCCYEDySGbMRYzaQwa2WaudGCpMl3OLhYGf7fYV6o_i5jcP_6ygLE5=
+TPMNxb3CC7lG0f295EP_3OVfb4bNHXU0JUOoAVNTdA9VLyI4rcIELuClupqugQ30DxiOlCLtZdJ=
+8rZ3LGvqAOwqW9FYVQA7UI6IJc_PQqMhg"><div class=3D"profile-img-wrap" style=3D=
+"font-size: 16px; line-height: 26px; position: relative;"><img src=3D"https=
+://cdn.substack.com/image/fetch/w_90,h_90,c_fill,f_auto,q_auto:good,fl_prog=
+ressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.=
+s3.amazonaws.com%2Fpublic%2Fimages%2F7f37bae1-3b35-4b47-b195-9bcbeb608543_1=
+067x1067.png" height=3D"45" width=3D"45" alt=3D"" style=3D"border: none !im=
+portant; border-radius: 50%; cursor: pointer; display: block; height: 45px;=
+ max-width: 550px; vertical-align: middle; width: 45px;"></div></a></div></=
+td><td class=3D"meta-author-contents"><div class=3D"meta-right-column" styl=
+e=3D"font-size: 16px; line-height: 1em; margin-left: 12px;"><div class=3D"m=
+eta-author" style=3D"color: #767676; font-family: -apple-system, BlinkMacSy=
+stemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Em=
+oji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; line-height: 17=
+px;"><a href=3D"https://email.mg1.substack.com/c/eJxNUEmOwyAQfE24jYUxBvvAYS=
+7zDcTSOCgELJaxnNcPiS8jtXpRb1VlVIUt5VPsqVT0drKeO4gIRwlQK2TUCmTprSB05OuEKbICc=
+2K4Rr5IlwGeygeB9qaDN6r6FK_pmRCK7oITMGpZLEyGaq3YvDCGV8Ut55NajLueqmY9RAMixXDK=
+XXmLgrjXupfb9H0jP91K06Uq8xhMevZyz8n5AD0jE15HRuev7XUAPMKJvCCYEDySGbMRYzaQwa2=
+WaudGCpMl3OLhYGf7fYV6o_i5jcP_6ygLE5TPMNxb3CC7lG0f295EP_3OVfb4bNHXU0JUOoAVNT=
+dA9VLyI4rcIELuClupqugQ30DxiOlCLtZdJ8rZ3LGvqAOwqW9FYVQA7UI6IJc_PQqMhg" style=
+=3D"color: #1a1a1a; text-decoration: none;">GZweekly</a></div><table cellpa=
+dding=3D"0" cellspacing=3D"0" class=3D"post-meta   custom" style=3D"margin:=
+ 4px 0 0 0;"><tr><td class=3D"post-meta-item audience-lock" style=3D"color:=
+ #767676; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Robot=
+o, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Se=
+goe UI Symbol'; font-size: 14px; font-weight: 400; height: 14px; line-heigh=
+t: 100%; padding: 0px 12px 0px 0; padding-bottom: 0; padding-right: 9px; pa=
+dding-top: 0; position: relative; text-decoration: none; vertical-align: mi=
+ddle;"><img src=3D"https://cdn.substack.com/image/fetch/w_28,c_scale,f_png,=
+q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FLockFu=
+llIcon%3Fv%3D2%26height%3D28%26strokeWidth%3D2" width=3D"14" height=3D"14" =
+style=3D"border: none !important; margin-left: -4px; margin-top: -3px; max-=
+width: 14px; vertical-align: middle;" alt=3D""></td><td title=3D"2022-01-25=
+T06:10:09.339Z" class=3D"post-meta-item post-date" style=3D"color: #767676;=
+ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvet=
+ica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Sy=
+mbol'; font-size: 14px; font-weight: 400; height: 14px; line-height: 100%; =
+padding: 0px 12px 0px 0; padding-bottom: 0; padding-top: 0; position: relat=
+ive; text-decoration: none; vertical-align: middle; white-space: nowrap;"><=
+time dateTime=3D"2022-01-25T06:10:09.339Z">Jan 25</time></td><td class=3D"p=
+ost-meta-item icon" style=3D"color: #767676; font-family: -apple-system, Bl=
+inkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple =
+Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; font-we=
+ight: 400; height: 14px; line-height: 100%; padding: 0px 12px 0px 0; paddin=
+g-bottom: 0; padding-top: 0; position: relative; text-decoration: none; tex=
+t-indent: 3px; vertical-align: middle; white-space: nowrap;"><span class=3D=
+"post-meta-icon"><a href=3D"https://email.mg1.substack.com/c/eJxVUl1v2yAU_T=
+Xx2yzA2KkfeJiaZko0u02XNc1eLAzXCTH-KIa6zq8fbjZpk9C5gvvBufcewS2cOjOxvhtsMENhp=
+x5YC-OgwVowgRvAFEoyQvEyjRANJENLIpZloIaiMgANV5oFvSu1Etyqrr1Fx4TQ4MxikeA4pRUh=
+FeWS8iheInQXpzgpCaYc3T7lTipoBbCu1VPRcyUDzc7W9sMi-roga38E11BWuhvBDOHgysFyUYe=
+ia7yP98rjO_Ywl_Pmk9UXA1zMjBbR2nY1eLuCaYsFeZleia43l27KVw_R4z4b8_tRiW_pVa7T_t=
+f9JslXguT7I8r39bBpt_p4yBE_pM7nKNqTeqNGxQ9r5O8f-WV3zVb1R7Z6GL_fb3sRZepRbUd52=
+NjsssPZZYPmeBG9qDlfNC_nY_Tcl4SqahfexXFa7R6ea1v82HdPxe71ncvy7UM7EKdjmkVvT1eV=
+Xt6e6M8FSZxtiqFzRoDv5u8c_rw3IJVr5i7n9gPFCCIEYRKjBCOUhCSsUknLqsIUIkmWEoVjMrn=
+3q7YLipoT_m-wgWFCc2UgPLv2BKbqjPRhp7n2p9_vvPC2ca2yUwEtLzVIZo2DwN4U9cmjOEELxi=
+tNFtwynNAIpRhhRO_IbfteL3SZxAmN08ATkJ3Patm_C_8NVYHnRA" class=3D"like-button"=
+ style=3D"color: #767676; display: block; text-decoration: none;"><img src=
+=3D"https://cdn.substack.com/image/fetch/w_28,c_scale,f_png,q_auto:good,fl_=
+progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FHeartIconRounded%3Fv%=
+3D3%26height%3D28%26fill%3D%2523757575%26stroke%3D%2523757575%26strokeWidth=
+%3D2" width=3D"14" height=3D"14" style=3D"border: none !important; display:=
+ inline-block; float: left; height: 14px; max-width: 14px; vertical-align: =
+top; width: auto;" alt=3D""></a></span></td><td class=3D"post-meta-item ico=
+n" style=3D"color: #767676; font-family: -apple-system, BlinkMacSystemFont,=
+ 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Se=
+goe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; font-weight: 400; height=
+: 14px; line-height: 100%; padding: 0px 12px 0px 0; padding-bottom: 0; padd=
+ing-top: 0; position: relative; text-decoration: none; text-indent: 3px; ve=
+rtical-align: middle; white-space: nowrap;"><a class=3D"" href=3D"https://e=
+mail.mg1.substack.com/c/eJxVUsGOmzAQ_ZpwRMaACQcf0tC0bBOqrKI0yQWBPRA32FDbbJZ=
+8fc2mlVrJtjQzb8Yzbx6rLLS9nujQG-vNT2mnAaiCu-nAWtDeaECXglMcBUkaosjjFCWYJbUnTN=
+loAFmJjnrDWHeCVVb06omOMY68K00BY9IQQtKwwcuQo4QtGQkJgjqsWcqfn1YjF6AY0F51UzlUg=
+nsdvVo7mEW4WuCNO6zqoG66_g7a-Gasja3YzWe9dLHBXYTwjOqlBGVd2sb2N1CLMIPpJWD4OJ1w=
+d8t_9lORfQ6_H3b3Yn0X7Ev64Jt0uKxzUmQMF4czKg43k8vuyp1v5-zdYxXvDqv3ncNXp-Lhagj=
+29Si2h9xh86lY5yZXRXAWOcnVpzcW7i2Tx-s5fB1qHIlm72_lL5m8x4_XHzKr4-hyytb5KbPjoz=
+YXsTXnb3s9DC9VztvzApPRytL0o2bguv876R-_BC5GOU810-4JihHGKMAxIgFCxMd-k_Kobpogg=
+pDjhCP_Tqbx7dHZRYRkG_xHnacp6yqhwb-OqgXd9Jo7WDvX_oi7rZYzpaMSdipBVXUHnFo9gmef=
+mvnoo2xBgXZa4mVlaUCiEKUBClC0xM_9OkVECYlJFKeea4D3LkvRf1f6GzPs3GU" style=3D"c=
+olor: #767676; display: block; text-decoration: none;"><img src=3D"https://=
+cdn.substack.com/image/fetch/w_28,c_scale,f_png,q_auto:good,fl_progressive:=
+steep/https%3A%2F%2Fsubstack.com%2Ficon%2FCommentIconRounded%3Fv%3D3%26heig=
+ht%3D28%26fill%3D%2523757575%26stroke%3D%2523757575%26strokeWidth%3D2" widt=
+h=3D"14" height=3D"14" style=3D"border: none !important; display: inline-bl=
+ock; float: left; height: 14px; max-width: 14px; vertical-align: top; width=
+: auto;" alt=3D"Comment" class=3D"comment-icon post-meta-icon"></a></td><td=
+ class=3D"post-meta-item icon" style=3D"color: #767676; font-family: -apple=
+-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-ser=
+if, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14=
+px; font-weight: 400; height: 14px; line-height: 100%; margin-right: 0; pad=
+ding: 0px 12px 0px 0; padding-bottom: 0; padding-right: 0; padding-top: 0; =
+position: relative; text-decoration: none; text-indent: 3px; vertical-align=
+: middle; white-space: nowrap;"><span><a href=3D"https://email.mg1.substack=
+=2Ecom/c/eJxVUl2P2yAQ_DXxo4Uxts8PPFyTpvU1=
+cZVTdE3yYvGxTmgMdgFfzvn1Ry6tdJVYpJ0d=
+YJlZwTwcezvRoXc-um2NnwagBi6uA-_BRqMD2yhJMUmKMkUkkhQVWBQ8Uq5pLYBmqqPRMPJOCeZ=
+Vb-7sDGMSnWiGJSoKXhQEPWQlT9oEZ2nB27QMwUlyf5SNUoERQHvTTc3AlIw6evJ-cLP0cYaXYQ=
+nWAW-7_gLWxW7kzjNxjkWvQ20IgRCepcvR68b1oxUwSxf_WDOc33ANUo064B8t_wVFbzwYf2Ofm=
+IWAMnH7xCfA92e45TA9JQK_TDvcnavf_VQvvqY_t-tLPb8o8a28ymU5HOZVXi8Errd7VG_PrtLd=
+SQZsHfL19TFbbx_f1oHPdvU13KHE9xe12laBW031vHKVqZO9qvLKfHkV6cYL_XLap88Dx0S1m3i=
+l_-jiLbs-_9ILnpHDbjGvdgs_Xrk7qJXb_9jYYXhilTzuI0UxwhgFvVGeIJTHOG5LSXjbJgRSiQ=
+uJ4ks-ja_Xzs8I0sfkP1kjS0XHlIX4NJoj2La3MtCON-0-6sHxoJ7Wo1F-asAw3oGk3o4Q-fs8f=
+ejcHMGADXMmG-ZpkpMUlQlKEHnAd-_DtJAiz3KSlVFoQPbhlKGf7X4HAAXlmQ" style=3D"col=
+or: #767676; display: block; text-decoration: none;"><img src=3D"https://cd=
+n.substack.com/image/fetch/w_32,c_scale,f_png,q_auto:good,fl_progressive:st=
+eep/https%3A%2F%2Fsubstack.com%2Ficon%2FRecommendIconRounded%3Fv%3D2%26heig=
+ht%3D32%26fill%3D%2523757575%26stroke%3Dnone%26strokeWidth%3D2" width=3D"16=
+" height=3D"16" style=3D"border: none !important; display: inline-block; fl=
+oat: left; height: 16px; max-width: 550px; vertical-align: top; width: 16px=
+;" alt=3D"Share" class=3D"recommend-icon post-meta-icon"></a></span></td></=
+tr></table></div></td></tr></table></div></div><div class=3D"post typograph=
+y" style=3D"font-size: 16px; line-height: 26px; padding: 9px 0;"><div class=
+=3D"body markup" style=3D"font-family: 'Roboto Mono',monospace; font-size: =
+16px; font-weight: 400; line-height: 26px; margin-bottom: 12px; width: 100%=
+; word-break: break-word;"><div class=3D"captioned-image-container-static" =
+style=3D"font-size: 16px; line-height: 26px; margin-bottom: 16px; margin-to=
+p: 0; text-align: center;"><figure style=3D"display: inline-block; margin: =
+0 auto; width: 100%;"><table class=3D"image-wrapper" width=3D"100%" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"margin: 8px auto; mso-p=
+adding-alt: 1em 0 1.6em;"><tbody><tr><td style=3D"text-align: center;"></td=
+><td align=3D"left" class=3D"content" width=3D"800" style=3D"text-align: ce=
+nter;"><a class=3D"image-link" target=3D"_blank" href=3D"https://email.mg1.=
+substack.com/c/eJxVUsmO5CAM_ZrKLRFrlgOHVkvzG5EBk2I6gQyQrkl__ZDKaSRkG2_P8rOB=
+gktMp9pjLs0l5nLuqAK-8oqlYGqOjGn2VjFBh4kT0VhFBmYG3fg8u4S4gV9Vsx969QaKj-HOloy=
+J5qmoIz1QYYFRPThBECZNCdXcIgwjiBsUDusxGFQxrOe8g7fNqp6l7PnBPx7sV33Ghi4fOhcwX5=
+2JW3X5DRas2mExz0vXPiU-2Oef2-AfS4y2_t067ykuCXP231j9uSDuteKGYPICkRdMFfowX1jjq=
+UUitTajaDUAbwUfsJ0kHVuwmjONwzCNosu8gw1-YoBXvueqPe5tvM33kPlt1mKmxxFaaQVrRe_6=
+VkvHW-pq1MlrvcM8EvJXctb93nFpvGKEMUKZJD0lpO9Y5yYrtHNUILdssKR79efx_bOWhyDbQv_=
+bUZOUWcEn7J5HWDC5mGxNWy7K3vE651z1dgRfzhkD6BWtKunAptw38aZ3XjBgqrdiZyiK9oKTqZ=
+JIxMhu_irjYuhlL-TU1AFsrFVBGVhRuzW-MOV_ChbJoA" rel=3D"" style=3D"border: non=
+e; display: block; height: auto; margin: 0; margin-bottom: 0; margin-top: 0=
+; padding: 0; text-decoration: none; width: auto;"><img data-attrs=3D"{&quo=
+t;src&quot;:&quot;https://bucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3=
+=2Eamazonaws.com/public/images/9512b88a-5=
+d42-46f6-b5f3-1f252f579307_800x532.j=
+peg&quot;,&quot;fullscreen&quot;:null,&quot;height&quot;:532,&quot;width&qu=
+ot;:800,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:46012,&quot;alt&quot=
+;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/jpeg&quot;,&quot=
+;href&quot;:null}" alt=3D"" width=3D"550" height=3D"365.75" class=3D"wide-i=
+mage" src=3D"https://cdn.substack.com/image/fetch/w_1600,c_limit,f_auto,q_a=
+uto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-95=
+18-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F9512b88a-5d42-46f6-b5f=
+3-1f252f579307_800x532.jpeg" style=3D"-ms-interpolation-mode: bicubic; bord=
+er: none !important; display: block; height: auto; margin: 0 auto; margin-b=
+ottom: 0; max-width: 550px; vertical-align: middle; width: 100%;"></a></td>=
+<td style=3D"text-align: center;"></td></tr></tbody></table></figure></div>=
+<p style=3D"color: #1a1a1a; font-size: 16px; line-height: 26px; margin: 0 0=
+ 1em 0;"></p><div class=3D"captioned-image-container-static" style=3D"font-=
+size: 16px; line-height: 26px; margin-bottom: 16px; text-align: center;"><f=
+igure style=3D"display: inline-block; margin: 0 auto; width: 100%;"><table =
+class=3D"image-wrapper" width=3D"100%" border=3D"0" cellspacing=3D"0" cellp=
+adding=3D"0" style=3D"margin: 8px auto; mso-padding-alt: 1em 0 1.6em;"><tbo=
+dy><tr><td style=3D"text-align: center;"></td><td align=3D"left" class=3D"c=
+ontent" width=3D"1456" style=3D"text-align: center;"><a class=3D"image-link=
+" target=3D"_blank" href=3D"https://email.mg1.substack.com/c/eJxVUsuOpSAQ_Z=
+rLTsNL1AWLTifzG4ZH4WUawQHsO_bXD15Xk5Cqop6HOhhVYU35lHsqFV1iqecOMsKrBKgVMjoK5=
+MVbSTkZZ4Y5shKP1Iwa-bK4DLApHyTaDx28UdWneGcPlHL0lE4JQsg8MUIZFgQDaMcEMxYstw7b=
+e6g6rIdoQKYYzmVX3qIgn7Xu5cE-HvRXO8bGvhy6VGW-epO25vKbWqFpB9U8L9361PSgn39ug32=
+sKdl2d2HZc1ozlOK_oflLBdhbxT2CDteQ4RrThD7MF7R47gAPWpuJd1op1nE2QjcPZOqU1YxqGM=
+d54n1hvdrUT4rqVW5crce9jbf5Blne5qRm6igXXXs37bhiptNswB0flRDNT8VIFiIw_kuw4P3vH=
+VbkJcWUYkKHa3tY9LR3s-XaOcKBWTpa3L_EeXz_hPrgeFvJf1tCWZqgfIb-ecQVskvZtrT1Iu0d=
+b0iXprcj-nouEJUOYGXNB6B6_4o3wcsKEXL7LXZRVRLBGZ4JJphP9Gawcc5HMQg-zKgBsKlVRWl=
+UaHyH9IJc_gEFfcnK" rel=3D"" style=3D"border: none; display: block; height: =
+auto; margin: 0; padding: 0; text-decoration: none; width: auto;"><img data=
+-attrs=3D"{&quot;src&quot;:&quot;https://bucketeer-e05bbc84-baa3-437e-9518-=
+adb32be77984.s3.amazonaws.com/public/images/8a92f246-f0d2-4a3c-b350-47a6624=
+62671_1600x1064.jpeg&quot;,&quot;fullscreen&quot;:null,&quot;height&quot;:9=
+68,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:53=
+8900,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;ima=
+ge/jpeg&quot;,&quot;href&quot;:null}" alt=3D"" width=3D"550" height=3D"365.=
+65934065934067" class=3D"wide-image" src=3D"https://cdn.substack.com/image/=
+fetch/w_2912,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2F=
+bucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2F=
+images%2F8a92f246-f0d2-4a3c-b350-47a662462671_1600x1064.jpeg" style=3D"-ms-=
+interpolation-mode: bicubic; border: none !important; display: block; heigh=
+t: auto; margin: 0 auto; margin-bottom: 0; max-width: 550px; vertical-align=
+: middle; width: 100%;"></a></td><td style=3D"text-align: center;"></td></t=
+r></tbody></table></figure></div><div class=3D"captioned-image-container-st=
+atic" style=3D"font-size: 16px; line-height: 26px; margin-bottom: 16px; tex=
+t-align: center;"><figure style=3D"display: inline-block; margin: 0 auto; w=
+idth: 100%;"><table class=3D"image-wrapper" width=3D"100%" border=3D"0" cel=
+lspacing=3D"0" cellpadding=3D"0" style=3D"margin: 8px auto; mso-padding-alt=
+: 1em 0 1.6em;"><tbody><tr><td style=3D"text-align: center;"></td><td align=
+=3D"left" class=3D"content" width=3D"1456" style=3D"text-align: center;"><a=
+ class=3D"image-link" target=3D"_blank" href=3D"https://email.mg1.substack.=
+com/c/eJxVUkuO5CAMPU2xSwSEhLBg0WpprhEZcFJME8gA6Zrq0w9VWY2EbOPvww8LFbeUn_pIp=
+ZKXWOrzQB3xUQLWipmcBfPineaCSTVQQZymkltpiC_LmhF38EGT4zTBW6g-xSt75FyQux7FTGdq=
+FFUUFUdOJyaRUlidlJO07hoKp_MYLeoUw3M5wDsS9L3Wo9yGjxv_1Y51sS-nKRXsV2_T3lx-hw2=
+bXrHa-0u3PjXd-Oefyxg-tpRcu69hOXLaMpbiv7H5S0U8WsU1go-vIeNrTBPmtF_Y4rlDOhpjZ9=
+EZgKETg8ROjWzuwJmBG5RSzaIvQw87_KQIj3Lhaj2ubbzNN8jyNrG93EyT6YDL1o8y6ADk2KFiy=
+lGYzCztwpnkf5kQc__7wI14zSnnlPGxbY7Sqef9qpww68oEDo5LR_vH9Dy_f0K9Cbpv7L8tkaxt=
+AJ-xv59xw7ym7Fra9iLtHW9Il6b3M_r6XDCCCeh0zSeSev2KN8HLhhFz-y1ugarZJAaqGGVUzPx=
+isHEu5DROYlSkAXCpVUVtIaBZQ3pgLv8Ajq7KFg" rel=3D"" style=3D"border: none; di=
+splay: block; height: auto; margin: 0; padding: 0; text-decoration: none; w=
+idth: auto;"><img data-attrs=3D"{&quot;src&quot;:&quot;https://bucketeer-e0=
+5bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com/public/images/e7e0b66b-=
+a273-401a-aa75-e919d0a6b87c_2172x1448.jpeg&quot;,&quot;fullscreen&quot;:nul=
+l,&quot;height&quot;:971,&quot;width&quot;:1456,&quot;resizeWidth&quot;:nul=
+l,&quot;bytes&quot;:750372,&quot;alt&quot;:null,&quot;title&quot;:null,&quo=
+t;type&quot;:&quot;image/jpeg&quot;,&quot;href&quot;:null}" alt=3D"" width=
+=3D"550" height=3D"366.7925824175824" class=3D"wide-image" src=3D"https://c=
+dn.substack.com/image/fetch/w_2912,c_limit,f_auto,q_auto:good,fl_progressiv=
+e:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.ama=
+zonaws.com%2Fpublic%2Fimages%2Fe7e0b66b-a273-401a-aa75-e919d0a6b87c_2172x14=
+48.jpeg" style=3D"-ms-interpolation-mode: bicubic; border: none !important;=
+ display: block; height: auto; margin: 0 auto; margin-bottom: 0; max-width:=
+ 550px; vertical-align: middle; width: 100%;"></a></td><td style=3D"text-al=
+ign: center;"></td></tr></tbody></table></figure></div><div class=3D"captio=
+ned-image-container-static" style=3D"font-size: 16px; line-height: 26px; ma=
+rgin-bottom: 16px; text-align: center;"><figure style=3D"display: inline-bl=
+ock; margin: 0 auto; width: 100%;"><a class=3D"image-link" target=3D"_blank=
+" href=3D"https://email.mg1.substack.com/c/eJxVUkuO5CAMPU2xSwQESLJg0RpprhEZ=
+MCnUCWSAdE316ZuqrFpCtvH3yc8WKq4pP_WRSiUvsdTngTrio2xYK2ZyFsxLcJoLNs4DFcRpOnI=
+7GhLK4jPiDmHT5DjNFizUkOKVLTkX5K7VJD1liE4qZBNHK2GmYOdRgENq8RoKpwsYLeoUt-dyQH=
+Bk0_daj3IbPm78b3vWxb6cplSwn71Ne3OFHVZs2mO195dufWq68T__LmP4WFNy7e-35chpzVhK-=
+MLmLxXxaBXXCC5fQ-RrTBPmtJ_Y4rlDKo2xk-gMwNCJYcRulmzqwJmBGxzHeRJ9GXrY4TtFeJQL=
+V-txbeNtvkGWt-kcKgkTdJIx1QkPqpun2XcD9bObORudMEtbG_3PFBX9EVcSNKecU8YlVYxS1fO=
+-5QrjPRM4OD462j_U8_z63upN0H1lv5ZEsrYbhIz9_YwrZp-ya2nri7N3vAFdmt7PGOpzwQhmQ6=
+drPpHU6yje_C4rRsztWNwCVTMlBjozyqiY-EVgo1yMSiohZ9IAuNSqorawofFbemAuP95ryrU" =
+rel=3D"" style=3D"border: none; display: block; height: auto; margin: 1.6em=
+ auto; padding: 0; text-decoration: none; width: auto;"><img src=3D"https:/=
+/cdn.substack.com/image/fetch/w_1100,c_limit,f_auto,q_auto:good,fl_progress=
+ive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.a=
+mazonaws.com%2Fpublic%2Fimages%2Fdde65a8a-5116-4fa6-989f-30f9d9217d4b_2240x=
+1604.png" data-attrs=3D"{&quot;src&quot;:&quot;https://bucketeer-e05bbc84-b=
+aa3-437e-9518-adb32be77984.s3.amazonaws.com/public/images/dde65a8a-5116-4fa=
+6-989f-30f9d9217d4b_2240x1604.png&quot;,&quot;fullscreen&quot;:null,&quot;h=
+eight&quot;:null,&quot;width&quot;:null,&quot;resizeWidth&quot;:null,&quot;=
+bytes&quot;:5266908,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&=
+quot;:&quot;image/png&quot;,&quot;href&quot;:null}" alt=3D"" style=3D"-ms-i=
+nterpolation-mode: bicubic; border: none !important; display: block; height=
+: auto; margin: 0 auto; margin-bottom: 0; max-width: 550px; vertical-align:=
+ middle; width: 100%;"></a></figure></div><div class=3D"captioned-image-con=
+tainer-static" style=3D"font-size: 16px; line-height: 26px; margin-bottom: =
+16px; text-align: center;"><figure style=3D"display: inline-block; margin: =
+0 auto; width: 100%;"><table class=3D"image-wrapper" width=3D"100%" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"margin: 8px auto; mso-p=
+adding-alt: 1em 0 1.6em;"><tbody><tr><td style=3D"text-align: center;"></td=
+><td align=3D"left" class=3D"content" width=3D"1456" style=3D"text-align: c=
+enter;"><a class=3D"image-link" target=3D"_blank" href=3D"https://email.mg1=
+=2Esubstack.com/c/eJxVUsmO5CAM_ZrilogQlnD=
+g0BppfiNiMSnUCWSAdE3665tUTi0h23h98rP=
+VFZaUT7WnUtEl5nruoCK8ygq1QkZHgTwHpwgdhBwxRU5hQawwKJTZZ4BNh1Wh_TBrsLqGFO9sRg=
+hFT4VHz4xxhgITElMtODcMpBRMTGxy9B6qDxcgWlAprue86-DQqp617uUxfjzI3_asi305TKnaf=
+vY2bc0VNr1A0x6qfV669anpQf78u43xY0nJtb9f5z2nJUMp4Quav1SAvVXcIwi7hrBrTBPmsJ_Q=
+4rkD3KDbiXZG67Gjo4BOsmHqtDMjMSCEnGhfxl5v-jtF_So3rtbj3sbbfIMsb5MZIBwL3VHi2SV=
+4N03CdERwId3owBs_D1Lg_wPHuN_jgoIimBA8EIb5gDHvSe-lo8b7gcLoiHC4f_Hz-Ppe64PibR=
+l-LQllZVcdMvTPIy6QfcqupS0XZ-94Azo3vR0x1HOGqM0KTtV8AKr3Ubz5nReIkNuxuFlXNXA6Y=
+jngAdOJ3AQ2yqngjFMmUQPgUquKyuoVjF_TC3L5ATmYyeQ" rel=3D"" style=3D"border: n=
+one; display: block; height: auto; margin: 0; padding: 0; text-decoration: =
+none; width: auto;"><img data-attrs=3D"{&quot;src&quot;:&quot;https://bucke=
+teer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com/public/images/5b=
+e2607a-42f5-42f6-887b-27679d3defbf_1970x1600.png&quot;,&quot;fullscreen&quo=
+t;:null,&quot;height&quot;:1183,&quot;width&quot;:1456,&quot;resizeWidth&qu=
+ot;:null,&quot;bytes&quot;:5981782,&quot;alt&quot;:null,&quot;title&quot;:n=
+ull,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null}" alt=3D""=
+ width=3D"550" height=3D"446.875" class=3D"wide-image" src=3D"https://cdn.s=
+ubstack.com/image/fetch/w_2912,c_limit,f_auto,q_auto:good,fl_progressive:st=
+eep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazona=
+ws.com%2Fpublic%2Fimages%2F5be2607a-42f5-42f6-887b-27679d3defbf_1970x1600.p=
+ng" style=3D"-ms-interpolation-mode: bicubic; border: none !important; disp=
+lay: block; height: auto; margin: 0 auto; margin-bottom: 0; max-width: 550p=
+x; vertical-align: middle; width: 100%;"></a></td><td style=3D"text-align: =
+center;"></td></tr></tbody></table></figure></div><div class=3D"captioned-i=
+mage-container-static" style=3D"font-size: 16px; line-height: 26px; margin-=
+bottom: 16px; text-align: center;"><figure style=3D"display: inline-block; =
+margin: 0 auto; width: 100%;"><table class=3D"image-wrapper" width=3D"100%"=
+ border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"margin: 8px auto=
+; mso-padding-alt: 1em 0 1.6em;"><tbody><tr><td style=3D"text-align: center=
+;"></td><td align=3D"left" class=3D"content" width=3D"1456" style=3D"text-a=
+lign: center;"><a class=3D"image-link" target=3D"_blank" href=3D"https://em=
+ail.mg1.substack.com/c/eJxVUkuO5CAMPU2xS8QvobJg0RpprhEZMCnUCWSAdE369E1VVi0h=
+29h-9pNtCxWXlE-9p1LJS8z13FFHfJYVa8VMjoJ5Dk5zydQkqCROU8WtMiSU2WfEDcKqyX6YNVi=
+oIcUre-BckocWUnrHqTGgBKOOjV4JsHwc3YTOeHo1hcMFjBZ1ius57xAcWfWj1r3cxMeN_23Put=
+iXw5QK9rO3aWuusMGCTXus9vHSrU5NN_7n32WIjyUl1_5-nfecloylhC9s_lIR94a4WvDh1WR4t=
+WnCHPYTWzx3SAdj7F12BkB0UijspoHdO3BGcINKTXfZF9HDBt8pwrNcvFqNaxpv802yXJUdoxSY=
+6hBBdtJPrgNgtHMSPLUj846ZmStK_zMpab_HhQTNKeeU8YGODTz2vG8wabxnEoXjytH-OZ7H1_d=
+ab5JuC_s1JJK1XSFk7B9HXDD7lF1LW147e8cb0bnp7YihnjNGMCs6XfOBpF5H8d7vvGDE3I7FzV=
+A1G6WgE6OMyju_FthWLtU4jHKYSCPgUkNFbWFF49f0xFx-AALgyy4" rel=3D"" style=3D"bo=
+rder: none; display: block; height: auto; margin: 0; padding: 0; text-decor=
+ation: none; width: auto;"><img data-attrs=3D"{&quot;src&quot;:&quot;https:=
+//bucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com/public/im=
+ages/bd100a17-eea4-4f9d-aa10-d4af0c61fd1b_2700x1440.png&quot;,&quot;fullscr=
+een&quot;:null,&quot;height&quot;:777,&quot;width&quot;:1456,&quot;resizeWi=
+dth&quot;:null,&quot;bytes&quot;:6190716,&quot;alt&quot;:null,&quot;title&q=
+uot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null}" al=
+t=3D"" width=3D"550" height=3D"293.50961538461536" class=3D"wide-image" src=
+=3D"https://cdn.substack.com/image/fetch/w_2912,c_limit,f_auto,q_auto:good,=
+fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32b=
+e77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fbd100a17-eea4-4f9d-aa10-d4af0c6=
+1fd1b_2700x1440.png" style=3D"-ms-interpolation-mode: bicubic; border: none=
+ !important; display: block; height: auto; margin: 0 auto; margin-bottom: 0=
+; max-width: 550px; vertical-align: middle; width: 100%;"></a></td><td styl=
+e=3D"text-align: center;"></td></tr></tbody></table></figure></div><div cla=
+ss=3D"captioned-image-container-static" style=3D"font-size: 16px; line-heig=
+ht: 26px; margin-bottom: 16px; text-align: center;"><figure style=3D"displa=
+y: inline-block; margin: 0 auto; width: 100%;"><table class=3D"image-wrappe=
+r" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D=
+"margin: 8px auto; mso-padding-alt: 1em 0 1.6em;"><tbody><tr><td style=3D"t=
+ext-align: center;"></td><td align=3D"left" class=3D"content" width=3D"1456=
+" style=3D"text-align: center;"><a class=3D"image-link" target=3D"_blank" h=
+ref=3D"https://email.mg1.substack.com/c/eJxVUsmO5CAM_ZrilogtQA4cWiPNb0QsJoU=
+6gQyQrqn--qYqp5aQbbw--dmZBmsuT33k2tBLLO15gE7wqBu0BgWdFcoSvaacyJlhjrzGkjppUa=
+xLKAC7iZtGx2m36EyLOV3ZE6Uc3bWzHrgDKoyj08xmQRzBUgUyS6mIgmuoOX2E5EDntD2Xw0SPN=
+n1v7ag39nGjf_tzPo31tLUZ9zm6vHdX3M0KXQdo7v7SvU_LN_rn32WwjzVn3_9hW46S1wK1xi_o=
+_toAjl5xjaDTa8j0GtOFPd0n9HgZAE_WOsUHawwbOJMwzBNRg_GWUQtSzoqPlY1mN985mUe9cPU=
+e1zbe5htkfZuCMg5MzgMHSoa-zzAoUHbg1gFzXgYq5UKFEv8JZ2o80oqipphSTOiEBcFYjHQMs-=
+c2BNJbeSo9Hh_ieX59b-3G8b6SX0tCRbvNxALj_UwrlJCL72nri7N3vANdut7PFNtzgWTsBl63c=
+gJq11G8-V1WSFD6sfjFNE0EZ3gmmGCu6EVgp5xLMQk-zagD8LlXJe3MBjZs-QGl_gBgu8ni" re=
+l=3D"" style=3D"border: none; display: block; height: auto; margin: 0; padd=
+ing: 0; text-decoration: none; width: auto;"><img data-attrs=3D"{&quot;src&=
+quot;:&quot;https://bucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazo=
+naws.com/public/images/6234e379-4e21-417f-8e8b-4bce3cd7f277_2686x1438.png&q=
+uot;,&quot;fullscreen&quot;:null,&quot;height&quot;:779,&quot;width&quot;:1=
+456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:6161940,&quot;alt&quot;:=
+null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;hr=
+ef&quot;:null}" alt=3D"" width=3D"550" height=3D"294.2651098901099" class=
+=3D"wide-image" src=3D"https://cdn.substack.com/image/fetch/w_2912,c_limit,=
+f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-ba=
+a3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F6234e379-4e2=
+1-417f-8e8b-4bce3cd7f277_2686x1438.png" style=3D"-ms-interpolation-mode: bi=
+cubic; border: none !important; display: block; height: auto; margin: 0 aut=
+o; margin-bottom: 0; max-width: 550px; vertical-align: middle; width: 100%;=
+"></a></td><td style=3D"text-align: center;"></td></tr></tbody></table></fi=
+gure></div><div class=3D"captioned-image-container-static" style=3D"font-si=
+ze: 16px; line-height: 26px; margin-bottom: 16px; text-align: center;"><fig=
+ure style=3D"display: inline-block; margin: 0 auto; width: 100%;"><table cl=
+ass=3D"image-wrapper" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpad=
+ding=3D"0" style=3D"margin: 8px auto; mso-padding-alt: 1em 0 1.6em;"><tbody=
+><tr><td style=3D"text-align: center;"></td><td align=3D"left" class=3D"con=
+tent" width=3D"1456" style=3D"text-align: center;"><a class=3D"image-link" =
+target=3D"_blank" href=3D"https://email.mg1.substack.com/c/eJxVUsmO5CAM_Zri=
+loid5MChNdL8RsRiUqgTyADpmuqvb6pyagnZxuuTn51psOby1EeuDb3E0p4H6ASPukFrUNBZoSz=
+Ra8qJmhnmyGusqFMWxbqEArCbuGl0nHaLzrSY05UtKOXoriWdPHVhFsZwJzhVVijCJheMsRM4fg=
+01p4-QHOictudymOjRpu-tHfXGPm70b3_Op7GetjbjPkeX9-6Ku1mh6wDN3V-692n5Rv_8uwz2s=
+ebs-z9sy1HyWqDW-AXdXxvA0SuuEVS8hojXmC7s6T6hx8sAWFjrJj5YY9jAmYJhFmQajLeMWlBq=
+nvhY2Wh2852TedQLV-9xbeNtvkHWtymc9FjaMHjmoPcLfJioVwNxs3LOyolSs5B5xv-JxHw80oq=
+ipphSTKjAkmAsRzqG2XMbAuHAPFUejw_5PL--t3bjeF_JryWhot1mYoHxfqYVSsjF97T1xdk73o=
+EuXe9niu25QDJ2A69bOQG16yje_C4rJCj9WPximiaSMzwTTDCf6EVgp5wrKSQXM-oAfO5VSTuzg=
+Q1bfkCpP9FRyuA" rel=3D"" style=3D"border: none; display: block; height: aut=
+o; margin: 0; padding: 0; text-decoration: none; width: auto;"><img data-at=
+trs=3D"{&quot;src&quot;:&quot;https://bucketeer-e05bbc84-baa3-437e-9518-adb=
+32be77984.s3.amazonaws.com/public/images/5c6d06bf-d3ce-43f4-82d7-1c97ccb682=
+2a_1990x1604.png&quot;,&quot;fullscreen&quot;:null,&quot;height&quot;:1174,=
+&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:56229=
+19,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image=
+/png&quot;,&quot;href&quot;:null}" alt=3D"" width=3D"550" height=3D"443.475=
+27472527474" class=3D"wide-image" src=3D"https://cdn.substack.com/image/fet=
+ch/w_2912,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbuc=
+keteer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fima=
+ges%2F5c6d06bf-d3ce-43f4-82d7-1c97ccb6822a_1990x1604.png" style=3D"-ms-inte=
+rpolation-mode: bicubic; border: none !important; display: block; height: a=
+uto; margin: 0 auto; margin-bottom: 0; max-width: 550px; vertical-align: mi=
+ddle; width: 100%;"></a></td><td style=3D"text-align: center;"></td></tr></=
+tbody></table></figure></div><div class=3D"captioned-image-container-static=
+" style=3D"font-size: 16px; line-height: 26px; margin-bottom: 16px; text-al=
+ign: center;"><figure style=3D"display: inline-block; margin: 0 auto; width=
+: 100%;"><table class=3D"image-wrapper" width=3D"100%" border=3D"0" cellspa=
+cing=3D"0" cellpadding=3D"0" style=3D"margin: 8px auto; mso-padding-alt: 1e=
+m 0 1.6em;"><tbody><tr><td style=3D"text-align: center;"></td><td align=3D"=
+left" class=3D"content" width=3D"1456" style=3D"text-align: center;"><a cla=
+ss=3D"image-link" target=3D"_blank" href=3D"https://email.mg1.substack.com/=
+c/eJxVUkuO5CAMPU2xS8Q3CQsWrZHmGpEBJ4U6gQyQrqk-fVOVVUvINv69J9sOKq4pP82RSiUvM=
+dfngSbio2xYK2ZyFsxz8IZLNmpBJfGGjtyNloQyLxlxh7AZcpx2Cw5qSPHKVpxLcjdqoqi915KB=
+AGAD6An0wCeuLFcLdRconD5gdGhS3J7zAcGTzdxrPcpNfNz43_acj305bangPnuX9uYKO6zY9IL=
+V3V-69anpxv_8uwzxsabk23_Z5iOnNWMp4Qubv1TEo1VcEFy9QNQLpgl7uk9s8dwhVda6SXYWQH=
+RSjNhpxaYOvBXc4jjqSfZF9LDDd4rwKBev1uOaxtt8kyxvUwOXo9fYDdPEOkmp60Ah7UbBBFCO1=
+As_Mz3y_0wOQ3_ElQTDKeeUcUUHRunQ837RXtplYRKF56On_WN4nl_fW71Juq_s15BINm6DkLG_=
+n3HFvKTsW9r62tk73ojOTe9nDPU5YwS7oTc1n0jqdRTv_c4rRsztWPwM1bBBCqoZZVRO_FpgW7k=
+cBzVIpUkj4FOrisbBhnbZ0gNz-QH6IcmF" rel=3D"" style=3D"border: none; display:=
+ block; height: auto; margin: 0; padding: 0; text-decoration: none; width: =
+auto;"><img data-attrs=3D"{&quot;src&quot;:&quot;https://bucketeer-e05bbc84=
+-baa3-437e-9518-adb32be77984.s3.amazonaws.com/public/images/9a247d9e-6881-4=
+00c-a5e0-7313a02e0d3d_1972x1466.png&quot;,&quot;fullscreen&quot;:null,&quot=
+;height&quot;:1082,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quo=
+t;bytes&quot;:4568032,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;typ=
+e&quot;:&quot;image/png&quot;,&quot;href&quot;:null}" alt=3D"" width=3D"550=
+" height=3D"408.7225274725275" class=3D"wide-image" src=3D"https://cdn.subs=
+tack.com/image/fetch/w_2912,c_limit,f_auto,q_auto:good,fl_progressive:steep=
+/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.=
+com%2Fpublic%2Fimages%2F9a247d9e-6881-400c-a5e0-7313a02e0d3d_1972x1466.png"=
+ style=3D"-ms-interpolation-mode: bicubic; border: none !important; display=
+: block; height: auto; margin: 0 auto; margin-bottom: 0; max-width: 550px; =
+vertical-align: middle; width: 100%;"></a></td><td style=3D"text-align: cen=
+ter;"></td></tr></tbody></table></figure></div><div class=3D"captioned-imag=
+e-container-static" style=3D"font-size: 16px; line-height: 26px; margin-bot=
+tom: 16px; text-align: center;"><figure style=3D"display: inline-block; mar=
+gin: 0 auto; width: 100%;"><table class=3D"image-wrapper" width=3D"100%" bo=
+rder=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"margin: 8px auto; m=
+so-padding-alt: 1em 0 1.6em;"><tbody><tr><td style=3D"text-align: center;">=
+</td><td align=3D"left" class=3D"content" width=3D"1456" style=3D"text-alig=
+n: center;"><a class=3D"image-link" target=3D"_blank" href=3D"https://email=
+=2Emg1.substack.com/c/eJxVUsmO5CAM_Zrilog=
+1hAOH1kjzGxGLSaFOIA2ka6q_fqjKXEZCtvH=
+69GxnGqy5PPWRa0MvsbTnATrBo27QGhR0VihL9JpyIhXDHHmNJXXSoliXUAB2EzeNjtNu0ZkWc7=
+qyBaUc3TVMMLPZKiZd8IIqbyYvhMCcQZglpddQc_oIyYHOaXsuh4kebfre2lFv7ONGf_fnfBrra=
+Wsz7nN0ee-uuJsVug7Q3P2le5-Wb_TX12WwjzVn3_9hW46S1wK1xm_o_toAjl5xjaDiNUS8xnRh=
+T_cJPV4GwMJaN_PBGsMGziQMSpB5MN4yakFKNfOxstHs5icn86gXrt7jYuNtvkHWt-kMp2YmYSB=
+M-YGDNIMKXA2s0wN-xl5SuXTa5j9kwtN4pBVFTTGlmFCBJ4K7k45BeW5DIByYp9Lj8TE9z--frd=
+043lfyH0moaLeZWGC8n2mFEnLxPW197ewd70CXrvczxfZcIBm7gdetnIDadRTv_S4rJCj9WPxim=
+iYTZ1gRTDCf_y2wr5zLSUxcKNQB-NyrknZmAxu2_IBS_wKZScoO" rel=3D"" style=3D"bord=
+er: none; display: block; height: auto; margin: 0; padding: 0; text-decorat=
+ion: none; width: auto;"><img data-attrs=3D"{&quot;src&quot;:&quot;https://=
+bucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com/public/imag=
+es/ca42a81f-139d-4e7a-9f49-3b93ed80d727_2248x1606.png&quot;,&quot;fullscree=
+n&quot;:null,&quot;height&quot;:1040,&quot;width&quot;:1456,&quot;resizeWid=
+th&quot;:null,&quot;bytes&quot;:6323296,&quot;alt&quot;:null,&quot;title&qu=
+ot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null}" alt=
+=3D"" width=3D"550" height=3D"392.85714285714283" class=3D"wide-image" src=
+=3D"https://cdn.substack.com/image/fetch/w_2912,c_limit,f_auto,q_auto:good,=
+fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32b=
+e77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fca42a81f-139d-4e7a-9f49-3b93ed8=
+0d727_2248x1606.png" style=3D"-ms-interpolation-mode: bicubic; border: none=
+ !important; display: block; height: auto; margin: 0 auto; margin-bottom: 0=
+; max-width: 550px; vertical-align: middle; width: 100%;"></a></td><td styl=
+e=3D"text-align: center;"></td></tr></tbody></table></figure></div><div cla=
+ss=3D"captioned-image-container-static" style=3D"font-size: 16px; line-heig=
+ht: 26px; margin-bottom: 16px; text-align: center;"><figure style=3D"displa=
+y: inline-block; margin: 0 auto; width: 100%;"><table class=3D"image-wrappe=
+r" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D=
+"margin: 8px auto; mso-padding-alt: 1em 0 1.6em;"><tbody><tr><td style=3D"t=
+ext-align: center;"></td><td align=3D"left" class=3D"content" width=3D"1456=
+" style=3D"text-align: center;"><a class=3D"image-link" target=3D"_blank" h=
+ref=3D"https://email.mg1.substack.com/c/eJxVUkuO5CAMPU1ll4hvSBYsWiPNNSIDJoU=
+6gTSQrqk-_VCV2YyEbOPfe7JtoeKa8lMfqdTuJZb6PFBHfJQNa8XcnQXzEpxmgqqZE9E5TRSzyn=
+ShLD4j7hA23R2n2YKFGlK8siVjortrMcI4oWDK00lyAhTBUzZyqbgVBNgFCqcLGC3qFLfnckBw3=
+abvtR7lxj9u7Hd71sWhnKZUsJ-DTXtzhR1WbNpjtfeXbn1qurFfX5fBP9aUXPv7bTlyWjOWEr6x=
+-UtFPFrFBcHkC0S-YJowp_3EFs89EmmMnURvAHgvuMJ-lnTqwRnODCo1T2IofIAdflKER7l4tR7=
+XNN7mm2R5m0Ak94zz3oKSvVB26qdxJr2ZJjYCm63zdGF8Jn8olWI44toFzQhjhDJJRkrIOLDBz0=
+4Y76lA7phyZHiMz_P7Z6s3QfaV_jekLmu7Qcg43M-4YvYpu5a2vnb2jjeiS9P7GUN9LhjBbOh0z=
+Sd29TqK936XFSPmdixugarpKDiZKaFETP8W2FYu1ChHIeeuEXCpVUVtYUPjt_TAXP4CKhjJIQ" =
+rel=3D"" style=3D"border: none; display: block; height: auto; margin: 0; pa=
+dding: 0; text-decoration: none; width: auto;"><img data-attrs=3D"{&quot;sr=
+c&quot;:&quot;https://bucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.ama=
+zonaws.com/public/images/a053f233-ca75-47c8-8690-b8826a29cdf1_2390x1154.png=
+&quot;,&quot;fullscreen&quot;:null,&quot;height&quot;:703,&quot;width&quot;=
+:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:4701527,&quot;alt&quot=
+;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;=
+href&quot;:null}" alt=3D"" width=3D"550" height=3D"265.55631868131866" clas=
+s=3D"wide-image" src=3D"https://cdn.substack.com/image/fetch/w_2912,c_limit=
+,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-b=
+aa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fa053f233-ca=
+75-47c8-8690-b8826a29cdf1_2390x1154.png" style=3D"-ms-interpolation-mode: b=
+icubic; border: none !important; display: block; height: auto; margin: 0 au=
+to; margin-bottom: 0; max-width: 550px; vertical-align: middle; width: 100%=
+;"></a></td><td style=3D"text-align: center;"></td></tr></tbody></table></f=
+igure></div><div class=3D"captioned-image-container-static" style=3D"font-s=
+ize: 16px; line-height: 26px; margin-bottom: 0; text-align: center;"><figur=
+e style=3D"display: inline-block; margin: 0 auto; width: 100%;"><table clas=
+s=3D"image-wrapper" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" style=3D"margin: 8px auto; mso-padding-alt: 1em 0 1.6em;"><tbody><=
+tr><td style=3D"text-align: center;"></td><td align=3D"left" class=3D"conte=
+nt" width=3D"1456" style=3D"text-align: center;"><a class=3D"image-link" ta=
+rget=3D"_blank" href=3D"https://email.mg1.substack.com/c/eJxVUsmO4yAQ_Zpws8=
+VqzIFDa6T5DYulcFDb4AHcmfTXN4lPLaGqR62PKpxpsOby1EeuDb3E0p4H6ASPukFrUNBZoSzRa=
+8qJVAxz5DWW1EmLYl1CAdhN3DQ6TrtFZ1rM6YoWlHJ019KKyXLwQnFlAp6womwWMswWgjLeXk3N=
+6SMkBzqn7bkcJnq06XtrR72xjxv924_zaaynrc24z9HlvZviblboOkBz95fudVq-0T__LsA-1px=
+9v4dtOUpeC9Qav6DbawM4esbVgopXE_Fq04U93Sd0fxkAC2vdzAdrDBs4kzAoQeah02bUgpRq5m=
+Nlo9nNd07mUS9evcY1jTd8k6xvSCfOAkg1MGbNwH1HhtJpmMkUjA0m8EAXSuX8nxDBxyOtKGqKK=
+cWECjwRjKeRjkF5bkMgHJin0uPxMT3Pr--t3TjeV_JrSKhot5lYYLyfaYUScvE9bH3t7O3vRJeu=
+9zPF9lwgGbuB162cgNr1Kd77XVZIUPpn8YtpmvR3YEUwwXym1wL7yrmcxMSFQp2Azz0raWc2sGH=
+LDyj1B2Zjypg" rel=3D"" style=3D"border: none; display: block; height: auto;=
+ margin: 0; padding: 0; text-decoration: none; width: auto;"><img data-attr=
+s=3D"{&quot;src&quot;:&quot;https://bucketeer-e05bbc84-baa3-437e-9518-adb32=
+be77984.s3.amazonaws.com/public/images/2643fe79-33ba-4d79-a226-816fabfaf4f2=
+_2278x1154.png&quot;,&quot;fullscreen&quot;:null,&quot;height&quot;:738,&qu=
+ot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:4213714,=
+&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/pn=
+g&quot;,&quot;href&quot;:null}" alt=3D"" width=3D"550" height=3D"278.777472=
+5274725" class=3D"wide-image" src=3D"https://cdn.substack.com/image/fetch/w=
+_2912,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbuckete=
+er-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%=
+2F2643fe79-33ba-4d79-a226-816fabfaf4f2_2278x1154.png" style=3D"-ms-interpol=
+ation-mode: bicubic; border: none !important; display: block; height: auto;=
+ margin: 0 auto; margin-bottom: 0; max-width: 550px; vertical-align: middle=
+; width: 100%;"></a></td><td style=3D"text-align: center;"></td></tr></tbod=
+y></table></figure></div></div></div><table cellpadding=3D"0" cellspacing=
+=3D"0" class=3D"post-meta big centered custom" style=3D"margin: 0 auto;"><t=
+r><td class=3D"post-meta-item icon" style=3D"color: #767676; font-family: -=
+apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, san=
+s-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-siz=
+e: 14px; height: 18px; line-height: 18px; padding: 0px 12px 0px 0; padding-=
+right: 16px; position: relative; text-decoration: none; text-indent: 3px; v=
+ertical-align: middle; white-space: nowrap;"><span class=3D"post-meta-icon"=
+><a href=3D"https://email.mg1.substack.com/c/eJxVUl1v2yAU_TXx2yzA2KkfeJiaZk=
+o0u02XNc1eLAzXCTH-KIa6zq8fbjZpk9C5gvvBufcewS2cOjOxvhtsMENhpx5YC-OgwVowgRvAF=
+EoyQvEyjRANJENLIpZloIaiMgANV5oFvSu1Etyqrr1Fx4TQ4MxikeA4pRUhFeWS8iheInQXpzgp=
+CaYc3T7lTipoBbCu1VPRcyUDzc7W9sMi-roga38E11BWuhvBDOHgysFyUYeia7yP98rjO_Ywl_P=
+mk9UXA1zMjBbR2nY1eLuCaYsFeZleia43l27KVw_R4z4b8_tRiW_pVa7T_tf9JslXguT7I8r39b=
+Bpt_p4yBE_pM7nKNqTeqNGxQ9r5O8f-WV3zVb1R7Z6GL_fb3sRZepRbUd52NjsssPZZYPmeBG9q=
+DlfNC_nY_Tcl4SqahfexXFa7R6ea1v82HdPxe71ncvy7UM7EKdjmkVvT1eVXt6e6M8FSZxtiqFz=
+RoDv5u8c_rw3IJVr5i7n9gPFCCIEYRKjBCOUhCSsUknLqsIUIkmWEoVjMrn3q7YLipoT_m-wgWF=
+Cc2UgPLv2BKbqjPRhp7n2p9_vvPC2ca2yUwEtLzVIZo2DwN4U9cmjOEELxitNFtwynNAIpRhhRO=
+_IbfteL3SZxAmN08ATkJ3Patm_C_8NVYHnRA" class=3D"like-button button post-meta=
+-button" style=3D"background-color: transparent; border: 1px solid rgba(204=
+, 204, 204, 0.5); border-radius: 3px; box-sizing: border-box; color: #76767=
+6; cursor: pointer; display: block; font-family: -apple-system, BlinkMacSys=
+temFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emo=
+ji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16px; height: auto; li=
+ne-height: 15px; margin: 0; opacity: 1; outline: none; padding: 10px 16px; =
+text-align: center; text-decoration: none;"><img src=3D"https://cdn.substac=
+k.com/image/fetch/w_28,c_scale,f_png,q_auto:good,fl_progressive:steep/https=
+%3A%2F%2Fsubstack.com%2Ficon%2FHeartIconRounded%3Fv%3D3%26height%3D28%26fil=
+l%3D%2523757575%26stroke%3D%2523757575%26strokeWidth%3D2" width=3D"14" heig=
+ht=3D"14" style=3D"border: none !important; display: inline-block; float: l=
+eft; height: 14px; margin-right: 4px; max-width: 14px; vertical-align: top;=
+ width: auto;" alt=3D""><span class=3D"meta-button-label">Like</span></a></=
+span></td><td class=3D"post-meta-item icon" style=3D"color: #767676; font-f=
+amily: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Ar=
+ial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; =
+font-size: 14px; height: 18px; line-height: 18px; padding: 0px 12px 0px 0; =
+padding-right: 16px; position: relative; text-decoration: none; text-indent=
+: 3px; vertical-align: middle; white-space: nowrap;"><a href=3D"https://ema=
+il.mg1.substack.com/c/eJxVUsGOmzAQ_ZpwRMaACQcf0tC0bBOqrKI0yQWBPRA32FDbbJZ8f=
+c2mlVrJtjQzb8Yzbx6rLLS9nujQG-vNT2mnAaiCu-nAWtDeaECXglMcBUkaosjjFCWYJbUnTNlo=
+AFmJjnrDWHeCVVb06omOMY68K00BY9IQQtKwwcuQo4QtGQkJgjqsWcqfn1YjF6AY0F51UzlUgns=
+dvVo7mEW4WuCNO6zqoG66_g7a-Gasja3YzWe9dLHBXYTwjOqlBGVd2sb2N1CLMIPpJWD4OJ1wd8=
+t_9lORfQ6_H3b3Yn0X7Ev64Jt0uKxzUmQMF4czKg43k8vuyp1v5-zdYxXvDqv3ncNXp-Lhagj29=
+Si2h9xh86lY5yZXRXAWOcnVpzcW7i2Tx-s5fB1qHIlm72_lL5m8x4_XHzKr4-hyytb5KbPjozYX=
+sTXnb3s9DC9VztvzApPRytL0o2bguv876R-_BC5GOU810-4JihHGKMAxIgFCxMd-k_KobpoggpD=
+jhCP_Tqbx7dHZRYRkG_xHnacp6yqhwb-OqgXd9Jo7WDvX_oi7rZYzpaMSdipBVXUHnFo9gmefmv=
+noo2xBgXZa4mVlaUCiEKUBClC0xM_9OkVECYlJFKeea4D3LkvRf1f6GzPs3GU" class=3D"pos=
+t-meta-button button" style=3D"background-color: transparent; border: 1px s=
+olid rgba(204, 204, 204, 0.5); border-radius: 3px; box-sizing: border-box; =
+color: #767676; cursor: pointer; display: block; font-family: -apple-system=
+, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Ap=
+ple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16px; hei=
+ght: auto; line-height: 15px; margin: 0; opacity: 1; outline: none; padding=
+: 10px 16px; text-align: center; text-decoration: none;"><img src=3D"https:=
+//cdn.substack.com/image/fetch/w_28,c_scale,f_png,q_auto:good,fl_progressiv=
+e:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FCommentIconRounded%3Fv%3D3%26he=
+ight%3D28%26fill%3D%2523757575%26stroke%3D%2523757575%26strokeWidth%3D2" wi=
+dth=3D"14" height=3D"14" style=3D"border: none !important; display: inline-=
+block; float: left; height: 14px; margin-right: 4px; max-width: 14px; verti=
+cal-align: top; width: auto;" alt=3D"Comment" class=3D"comment-icon post-me=
+ta-icon"><span class=3D"meta-button-label">Comment</span></a></td><td class=
+=3D"post-meta-item icon" style=3D"color: #767676; font-family: -apple-syste=
+m, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'A=
+pple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; he=
+ight: 18px; line-height: 18px; margin-right: 0; padding: 0px 12px 0px 0; pa=
+dding-right: 0; position: relative; text-decoration: none; text-indent: 3px=
+; vertical-align: middle; white-space: nowrap;"><span><a href=3D"https://em=
+ail.mg1.substack.com/c/eJxVUl2P2yAQ_DXxo4Uxts8PPFyTpvU1cZVTdE3yYvGxTmgMdgFf=
+zvn1Ry6tdJVYpJ0dYJlZwTwcezvRoXc-um2NnwagBi6uA-_BRqMD2yhJMUmKMkUkkhQVWBQ8Uq5=
+pLYBmqqPRMPJOCeZVb-7sDGMSnWiGJSoKXhQEPWQlT9oEZ2nB27QMwUlyf5SNUoERQHvTTc3AlI=
+w6evJ-cLP0cYaXYQnWAW-7_gLWxW7kzjNxjkWvQ20IgRCepcvR68b1oxUwSxf_WDOc33ANUo064=
+B8t_wVFbzwYf2OfmIWAMnH7xCfA92e45TA9JQK_TDvcnavf_VQvvqY_t-tLPb8o8a28ymU5HOZV=
+Xi8Errd7VG_PrtLdSQZsHfL19TFbbx_f1oHPdvU13KHE9xe12laBW031vHKVqZO9qvLKfHkV6cY=
+L_XLap88Dx0S1m3il_-jiLbs-_9ILnpHDbjGvdgs_Xrk7qJXb_9jYYXhilTzuI0UxwhgFvVGeIJ=
+THOG5LSXjbJgRSiQuJ4ks-ja_Xzs8I0sfkP1kjS0XHlIX4NJoj2La3MtCON-0-6sHxoJ7Wo1F-a=
+sAw3oGk3o4Q-fs8fejcHMGADXMmG-ZpkpMUlQlKEHnAd-_DtJAiz3KSlVFoQPbhlKGf7X4HAAXl=
+mQ" class=3D"button post-meta-button" style=3D"background-color: transparen=
+t; border: 1px solid rgba(204, 204, 204, 0.5); border-radius: 3px; box-sizi=
+ng: border-box; color: #767676; cursor: pointer; display: block; font-famil=
+y: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,=
+ sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font=
+-size: 16px; height: auto; line-height: 15px; margin: 0; opacity: 1; outlin=
+e: none; padding: 10px 16px; text-align: center; text-decoration: none;"><i=
+mg src=3D"https://cdn.substack.com/image/fetch/w_32,c_scale,f_png,q_auto:go=
+od,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FRecommendIconRo=
+unded%3Fv%3D2%26height%3D32%26fill%3D%2523757575%26stroke%3Dnone%26strokeWi=
+dth%3D2" width=3D"16" height=3D"16" style=3D"border: none !important; displ=
+ay: inline-block; float: left; height: 16px; margin-right: 4px; max-width: =
+550px; vertical-align: top; width: 16px;" alt=3D"Share" class=3D"recommend-=
+icon post-meta-icon"><span class=3D"meta-button-label">Share</span></a></sp=
+an></td></tr></table><div class=3D"container-border" style=3D"border-top: 1=
+px solid rgba(204, 204, 204, 0.5); box-sizing: border-box; font-size: 16px;=
+ line-height: 26px; margin: 32px 0 0; width: 100%;"></div><div class=3D"pos=
+t-cta" style=3D"font-size: 16px; line-height: 26px; margin: 24px 0 40px;"><=
+p style=3D"color: #1a1a1a; font-size: 16px; font-style: italic; line-height=
+: 26px; margin: 24px 0 0; margin-top: 0;"><span>This post is only for paid =
+subscribers of <a href=3D"https://email.mg1.substack.com/c/eJxVkMtuxCAMRb9m=
+WEaGkGRYsOimv4EImAwqgYhHR-nXl5lsWsmyF9evc42uuKV8yiOVSl5J1fNAGfFZAtaKmbSCWXk=
+rGaeLGIETK2FhZlmJL8plxF37IMnR1uCNrj7Fq3tijJOHNPPKzcIXuFuGGsFMdyaMcByEE9SN11=
+HdrMdoUKYYTnVob0mQj1qPchs_buyzh9EBVxfSE3MZSltL1eZrMGnvGvGSAWNA2QQzBZgHNjhh-=
+eoc5ThatlgYnvPZvn9CvXHYN_pvBcnSBO0zDo8WN8wuZdvbthfaW-90qte9RV9PhVGvAa2suSGp=
+l3dvG9SGEXP31CpdJZ35CIICBX5nF2d3hi_zNPNJkP6ATX0qyr9ovynriIE" style=3D"color=
+: #ff9900; text-decoration: none;">goodzones</a>.</span></p><p class=3D"cta=
+-box" style=3D"color: #1a1a1a; font-size: 16px; font-style: italic; line-he=
+ight: 26px; margin: 24px 0 0; text-align: center;"><a role=3D"button" class=
+=3D"button primary" href=3D"https://email.mg1.substack.com/c/eJxVUk2vmzAQ_D=
+XhVmRsA-HAocpHRVR4yWuavPSCjL0QBwcImBDy62uSSytZs7J21x7NDGcairodw6butDVBqscGw=
+gqGToHW0Fp9B20qRYip4wcEUUuEyMfczyzZpXkLcGVShVbTZ0pypmVdvaddjKl1DjECAvMMXEJ5=
+JhgEbC7myAkEnTPwiXh_ynohoeIQ1pUa04ZJYanwrHXTzcj3GV6bw5mCLFf1AG1nd33WacZLm9d=
+X02ONNHh3DEzPmfJi9a0FxidGM7LWdQmmLmHcOBwfxi-syuhSj8lyRT728ZAsBsl_BE-xDpo_i8=
+hLlhwn-xNK9mUXVRt1OiaIHYPe7Eja4DKSg2THNTL3R3LZPeNl-YiXq-HnYtNwEssPuRnEMdLxZ=
+efElwhN85wc5LTPr4fziXw2GaYy39lz1w3y3eqz1Omvfb1Nd193JrLbQ_XAi1MQk9v2KYPLbUt_=
+W9IIijFysIs8ByHPxnZutMzy3KFABPYFsgdv7O9PpWcUXQvnP62sNuSKyRbsc18V0OZ1K8xYMan=
+16hsbU1OvfSX1mELFMgUi1G0Pln6H5KVsWkAFrQmPSJkOHY8SFDjIQXSO34aaCFDfcz3qBpYhIG=
+qzVYX_evgXDwvYbg" style=3D"background-color: #FF9900; border: 0px solid #FF=
+9900; border-radius: 4px; border-width: 13px 20px 13px 18px; box-sizing: co=
+ntent-box; color: #ffffff !important; cursor: pointer; display: inline-bloc=
+k; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helv=
+etica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI =
+Symbol'; font-size: 17px; font-style: normal; font-weight: 300; height: 24p=
+x; line-height: 24px; margin: 0; opacity: 1; outline: none; padding: 0; tex=
+t-align: center; text-decoration: none !important; vertical-align: middle;"=
+>Like &amp; Comment</a></p></div><div class=3D"footer" style=3D"background:=
+ #f8f8f8 !important; color: #bcbcbc; font-size: 16px; line-height: 26px; ma=
+rgin-top: 24px; padding: 32px; text-align: center;"><p class=3D"small" styl=
+e=3D"color: #bcbcbc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe=
+ UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI =
+Emoji', 'Segoe UI Symbol'; font-size: 13px; line-height: 26px; margin: 0 0 =
+1em 0; margin-bottom: 0; padding-bottom: 30px;">&#169; 2022 <span>Caleb Flo=
+wers</span> <a href=3D"https://email.mg1.substack.com/c/eJxVUk2PmzAQ_TXhVmQ=
+bA-HgQ5Q0WapCuxVik70gYw-JG_NRY5Ylv75Ocmkly_Z4nueN3hvBLZx7s7ChH6133yq7DMA6mE=
+cN1oLxphFMpSQjFMdJgKgnGYqJiGtPjVVjAFquNPOGqdZKcKv67okOCaHehQkR1VggHK2BCkTWP=
+I6koFIkMg45EPwk5ZNU0AlgfaeXauBKeppdrB3GVbBZkb1bgmuoG93PYEZ_nOrRcnH1Rd-6HBd3=
+XneRauS1hurR1CrY2_4K3SrYwfINC1IuR6Kv6e9-yXdfgx9FNufbWYlDcpP7ZHjfplG-EyQvTig=
+vrmPa6ot0b5mLs9smzIrNZ-bw_JjfXA0lXkr1vUgdNl3ybTqmXY5PKo3S9tcgyF7Vh7J5f8MX_j=
+ar5tUvYaF_Pj5_Orov00eSTfORo_UcqqAwunxN9-Gh5C_zaS1PnmIEEYIwCVGEEYp84jeJpHXTY=
+AqBJLFE_hwt08dN2xVF7Rn_p4hnmNBcGfAvU3cG0_RGOtj5Lsoj78yq3NlOnbJLBd1dM8msmcCz=
+z1F4CFidoQPjRkRW3DIc0QAlGGFE1-RpmzOaxlEY0TDxXAOyd7869q9TfwHhqM7J" style=3D"=
+color: #ff9900; text-decoration: none;"><span style=3D"color: #bcbcbc; text=
+-decoration: underline;">Unsubscribe</span></a><br>548 Market Street PMB 72=
+296, San Francisco, CA 94104</p><p class=3D"small powered-by-substack" styl=
+e=3D"color: #bcbcbc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe=
+ UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI =
+Emoji', 'Segoe UI Symbol'; font-size: 13px; line-height: 26px; margin: 0 0 =
+1em 0; margin-bottom: 0; padding-bottom: 0;"><a href=3D"https://email.mg1.s=
+ubstack.com/c/eJxNkcuO5CAMRb8mLCMg5LVg0VKrfyPiYVKoCURgppT5-iFV01JLyItjo3t9b=
+RTCnvIlz1SQ3GXD6wQZ4VkCIEImtUDevJVcsHkdqCBW0pmbWRNfNpcBDuWDJGfVwRuFPsX39Mi5=
+IA8JVKvZOsYomJUtegEDs17N4sQ4LxO8RVW1HqIBmWK4tlN5S4J8IJ6lGz46_tVeqbqgMt-9Scd=
+Nhq-Kx1ZSzQa64fOn3fHp5gdYX4_GX_b-Q5MiQsRGXUr3bl5yyjllfKQTo3Tqee9WK7RzTMBg-W=
+xp_5yu-udvwE7QY2f9bxskSxOUz9A_atwhu5RtG9tvyVe_hdJEj6NGj9cGUekAVmKuQPAd-cvet=
+kOE3E5hN4WSTWKgK6OMioW_42mBinkaJzGupBmwqf2K0qgA2oX0hFz-AQ23nJs" style=3D"co=
+lor: #ff9900; text-decoration: none;"><img alt=3D"Publish on Substack" src=
+=3D"https://cdn.substack.com/image/fetch/w_340,c_limit,f_auto,q_auto:good,f=
+l_progressive:steep/https%3A%2F%2Fsubstack.com%2Fimg%2Fpublish-on-substack.=
+png" width=3D"170" height=3D"32" style=3D"border: none !important; margin-t=
+op: 3px; max-width: 550px; vertical-align: middle;"></a></p></div></div></t=
+d><td></td></tr></table><img width=3D"1px" height=3D"1px" alt=3D"" src=3D"h=
+ttps://email.mg1.substack.com/o/eJwlUEmOwyAQfM1wtABjHB94CwK6cdBgsFgSeV4_JD6=
+1VF2qzZmGey6XOnNtBA8Tot4xYRk4aNMUk2KmG6OMigcnoOjK3WpJqNoX_PIVObuNwZkWctIBFB=
+cL54I8FTUrMLvNRj4kM4x5KYWAmc34AC7oRj6m2nQImByqnOKlTxPgxoeSWOUixbKRoDjlnDK-U=
+MkolROf_AbCes8EzsBXoNNbXv31F9uPoMfOptptbcb9Ti4fpCgXTSg4PXvasfhcYND2T_zvfzTQ=
+4x49hXZpTMZGBNVKR9LuaXrFcpdj6zZTcWds14kq4btGbA0LGaaQh2pSzkS0PuY3lvoPXet4dA"=
+></body></html>
+--975106bc549b2cf7ee361180334f357670e85bf769247c905e81864e6bfa--

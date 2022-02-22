@@ -1,0 +1,16 @@
+body {
+	font-size:  18px;
+	line-height: 22px;
+	color:  black;
+	font-family: sans-serif;
+}
+a {
+color: black;
+text-decoration: underline;
+} 
+
+body {background-color: whitesmoke;}
+
+#footer {
+    height: 0;
+}

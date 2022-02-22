@@ -1,0 +1,50 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	font-size: 0px;
+
+
+}
+link {
+	color: hotpink;
+}
+iframe	{
+	border: 0px !important;
+	margin: none;
+	height: 100vh;
+	display: inline-block;
+}
+
+.iframe1 {
+	background: whitesmoke;
+	width: 20%;
+}
+.iframe2 {
+	background: whitesmoke;
+	width: 25%;
+}
+.iframe3 {
+	background: whitesmoke;
+	width: 55%;
+}
+
+.line {
+	display:  none;
+	height: 100vh;
+	width: 1.3px;
+	background: red;
+	position: absolute;
+	left: 20%;
+}
+
+.line2 {
+	display:  none;
+	height: 100vh;
+	width: 1.3px;
+	background: red;
+	position: absolute;
+	left: 45%;
+}
