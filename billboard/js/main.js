@@ -93,7 +93,7 @@ function showRows() {
                 const image = document.createElement("a");
                 image.setAttribute('href', row.fields.images[0].url);
                 image.setAttribute('download', 'Image');
-                image.innerHTML = "<img src=' "+ row.fields.images[0].url + ".jpg'>";
+                image.innerHTML = "<img src='"+ row.fields.images[0].url + "'>";
                 
                 image.classList.add("stickerimage");
                 document.body.appendChild(image);
