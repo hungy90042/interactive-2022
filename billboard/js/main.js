@@ -1,5 +1,6 @@
 console.log("Hello javascript is running");
 
+
 // load the airtable library
 var Airtable = require('airtable');
 
@@ -26,6 +27,7 @@ sort: [
 // and add each row to our rows array.
 function gotPageofRows(records, fetchNextPage) {
     console.log("gotPageofRows()");
+    console.log("RIGHTFILE");
 
     rows.push(...records);
 
@@ -90,24 +92,59 @@ function showRows() {
 
         else {
             if (row.fields.images) {
-                const image = document.createElement("a");
-                image.setAttribute('href', row.fields.images[0].url);
-                image.setAttribute('download', 'Image');
-                image.innerHTML = "<img src='"+ row.fields.images[0].url + "'>";
-                
-                image.classList.add("stickerimage");
-                document.body.appendChild(image);
-                image.id = row.fields.rowID;
+               
+
+
+            fetch(row.fields.images[0].url)
+  
+            .then(response => response.blob())
+            .then(blob => {
+            // Create a new FileReader innstance
+             const reader = new FileReader;
+  
+            // Add a listener to handle successful reading of the blob
+            reader.addEventListener('load', () => {
+              const image = new Image;
+              
+              // Set the src attribute of the image to be the resulting data URL
+              // obtained after reading the content of the blob
+
+              
+               var link = document.createElement("a");
+            // If you don't know the name or want to use
+            // the webserver default set name = ''
+            link.setAttribute('download', 'file.jpg');
+            link.href = reader.result;
+
+             const sticker = document.createElement("img");
+                sticker.src = row.fields.images[0].url;
+                sticker.classList.add("stickerimage");
+                sticker.id = row.fields.rowID;
+                link.appendChild(sticker);
+
+                if (row.fields.emptyimage) {
+                const emptyimage = document.createElement("img");
+                emptyimage.src = row.fields.emptyimage[0].url;
+                emptyimage.classList.add("emptyimage")
+                link.appendChild(emptyimage);
+                emptyimage.id = row.fields.rowID;
+
             }
 
-                  if (row.fields.emptyimage) {
-                const image = document.createElement("img");
-                image.src = row.fields.emptyimage[0].url;
-                image.classList.add("emptyimage")
-                document.body.appendChild(image);
-                image.id = row.fields.rowID;
+            document.body.appendChild(link);
+            //link.click();
+            //link.remove();
+
+            });
+  
+    // Start reading the content of the blob
+    // The result should be a base64 data URL
+    reader.readAsDataURL(blob);
+  });
 
             }
+
+
 
         }
         
@@ -134,9 +171,11 @@ base('text').update([
   });
 });
 
+
+//when you click on sticker you hide the current one and show the empty sticker
+
 $(this).hide();
 $(this).next().show();
-
 
 
 
@@ -155,7 +194,41 @@ $(this).next().show();
 
 
 
+function downloadFile(file) {
 
+    // Create a link and set the URL using `createObjectURL`
+
+    const link = document.createElement('a');
+
+    link.style.display = 'none';
+
+    link.href = URL.createObjectURL(file);
+
+    link.download = file.name;
+
+
+
+    // It needs to be added to the DOM so it can be clicked
+
+    document.body.appendChild(link);
+
+    link.click();
+
+
+
+    // To make this work on Firefox we need to wait
+
+    // a little while before removing it.
+
+    setTimeout(() => {
+
+        URL.revokeObjectURL(link.href);
+
+        link.parentNode.removeChild(link);
+
+    }, 0);
+
+}
 
 
 
