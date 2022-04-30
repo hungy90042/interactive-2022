@@ -23,7 +23,8 @@
 
 img {
   display: inline-block;
-  width: 100vw;
+  width: 95vw;
+  padding: 4px;
   /*height: 100vh;*/
 }
 

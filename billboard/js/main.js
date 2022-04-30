@@ -1,5 +1,13 @@
 console.log("Hello javascript is running");
 
+ //$(document).ready(function() {
+        // auto refresh page after 1 second
+     //   setInterval('refreshPage()', 5000);
+  //  });
+ 
+  //  function refreshPage() { 
+ //       location.reload(); 
+ //   }
 
 // load the airtable library
 var Airtable = require('airtable');
@@ -113,7 +121,7 @@ function showRows() {
                var link = document.createElement("a");
             // If you don't know the name or want to use
             // the webserver default set name = ''
-            link.setAttribute('download', 'file.jpg');
+            link.setAttribute('download', 'sticker.jpg');
             link.href = reader.result;
 
              const sticker = document.createElement("img");
@@ -155,9 +163,8 @@ $('body').on('click','img',function(){
 
 base('text').update([
   {
-    "id": this.id,
+    "id": 'Tester',
     "fields": {
-
       "status": true
     }
   }
