@@ -10,7 +10,7 @@ console.log("Hello javascript is running");
  //   }
 
 // load the airtable library
-var Airtable = require('airtable');
+//var Airtable = require('airtable');
 
 // configure the site to point to your Airtable
 var Airtable = require('airtable');
@@ -160,10 +160,10 @@ function showRows() {
 }
 
 $('body').on('click','img',function(){
-console.log(this.id);
+
 base('text').update([
   {
-    "id": 'Tester',
+    "id": this.id,
     "fields": {
       "status": true
     }
