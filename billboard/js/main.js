@@ -160,7 +160,7 @@ function showRows() {
 }
 
 $('body').on('click','img',function(){
-
+console.log(this.id);
 base('text').update([
   {
     "id": 'Tester',
