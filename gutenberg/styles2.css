@@ -1,0 +1,64 @@
+html {
+    background: snow
+}
+
+body {
+    margin: 0;
+
+}
+
+.Header {
+    padding: 8px;
+    background: snow;
+    color: orangered;
+}
+
+.Bible-text {
+    padding: 5px;
+    background: snow;
+    height: 100%;
+    overflow: hidden;
+}
+
+.Bible-text-item {
+    padding: 5px;
+    margin-bottom: 5px;
+    background: snow;
+    font-size: 6.25vh;
+    line-height: 6vh;
+    color: blue;
+    height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.Interview-text {
+    padding: 5px;
+    background: snow;
+    height: 100%;
+    overflow: hidden;
+}
+
+.Interview-text-item {
+    padding: 5px;
+    margin-bottom: 5px;
+    background: snow;
+    font-size: 80px;
+    height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.Main {
+    display: grid;
+    grid-template-columns: 2fr 5fr 1fr 1fr 5fr 2fr;
+    align-items: start;
+    height: 75vh;
+    overflow: hidden;
+}
+
+.Footer {
+    padding: 30px;
+    background: rgb(246, 154, 26);
+    height: 10vh;
+}

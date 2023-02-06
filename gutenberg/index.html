@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            @font-face {
+                font-family: Hal;
+                src: url("fonts/Hal.otf") format("opentype");
+            }           
+            html {
+                word-break: break-all;
+            }
+            .Page {
+                display: grid;
+                grid-template-columns: 2fr 5fr 1fr 1fr 5fr 2fr;
+            }
+            .Bible {
+                font-family: Hal;
+                font-size: 1.4vh;
+                line-height: 1.5vh;
+                color: rgb(255, 255, 255);
+                
+                text-align: left;
+                /*background-color: rgb(37, 37, 37);*/
+            }
+            .Interview {
+                font-family: "Hal";
+                font-size: 8vh;
+                line-height: 8vh;
+                color: rgb(47, 47, 47);
+                text-align: left;
+                padding: 0.1em 0.1em 0.1em;
+            }
+
+            .bibleVersoOne {
+                text-align: right;
+            }
+
+            @media print {
+                /* All your print styles go here */
+                .Bible {
+                    font-size: .92vh;
+                    line-height: .92vh;
+                }
+                .Interview {
+                    font-size: 5.2vh;
+                    line-height: 5.2vh;
+                }
+            }
+
+            .bibleVerse {
+                color: rgb(241, 241, 241);
+                margin: 0;
+                text-align: right;
+            }
+
+            .pageInfo {
+                font-family: "Hal";
+                color: rgb(44, 44, 44);
+                padding-left: 10px;
+                padding-top: 10px;
+            }
+
+            span { 
+                background-color: rgb(40, 40, 40); 
+                text-indent: 10%;
+                text-align: right;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="pageInfo"></div>
+        <div class="Page">
+            <div class="Bible Bible--versoOne"></div>
+            <div class="Interview Interview--verso"></div>
+            <div class="Bible Bible--versoTwo"></div>
+            <div class="Bible Bible--rectoOne"></div>
+            <div class="Interview Interview--recto"></div>
+            <div class="Bible Bible--rectoTwo"></div>
+        </div>
+       <script src="bible.js"></script>
+        <script src="interviews.js"></script>
+        <script src="scripts.js"></script>
+        
+    </body>
+</html>
